@@ -30,7 +30,7 @@
 		
 		if( in_array($class_name, $system_driver)){
 		
-			echo $class_name;
+			//echo $class_name;
 		
 			require_once(d_path.$class_name.'.driver.php');
 		

@@ -12,3 +12,35 @@ array (
   'line' => 34,
   'tag' => 'shutdownFunction',
 )
+2016-10-27 17:02:48:message:
+错误类型:2
+错误提示:mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on '127.0.0.1' (111)
+错误文件:/var/www/rouqiu/Lib/Driver/db.driver.php
+错误行:39
+
+2016-10-27 17:02:48:message:
+Can't connect to MySQL server on '127.0.0.1' (111)
+2016-10-27 17:03:05:message:
+错误类型:2
+错误提示:mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on '127.0.0.1' (111)
+错误文件:/var/www/rouqiu/Lib/Driver/db.driver.php
+错误行:39
+
+2016-10-27 17:03:05:message:
+Can't connect to MySQL server on '127.0.0.1' (111)
+2016-10-27 17:03:06:message:
+错误类型:2
+错误提示:mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on '127.0.0.1' (111)
+错误文件:/var/www/rouqiu/Lib/Driver/db.driver.php
+错误行:39
+
+2016-10-27 17:03:06:message:
+Can't connect to MySQL server on '127.0.0.1' (111)
+2016-10-27 17:03:16:message:
+错误类型:2
+错误提示:mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on '127.0.0.1' (111)
+错误文件:/var/www/rouqiu/Lib/Driver/db.driver.php
+错误行:39
+
+2016-10-27 17:03:16:message:
+Can't connect to MySQL server on '127.0.0.1' (111)

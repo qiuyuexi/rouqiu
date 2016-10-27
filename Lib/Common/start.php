@@ -1,7 +1,7 @@
 <?php
 	@session_start();
 
-	//error_reporting(0);
+	error_reporting(0);
 	
 	header("Content-type:text/html;charset=utf-8");
 	
@@ -23,15 +23,14 @@
 			return ;
 		} 
 
+
 		//返回系统驱动的类名数组
 		$config = new config();
 		
 		$system_driver = $config::sysDriver();
 		
 		if( in_array($class_name, $system_driver)){
-		
-			//echo $class_name;
-		
+				
 			require_once(d_path.$class_name.'.driver.php');
 		
 			return;

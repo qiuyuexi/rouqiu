@@ -30,7 +30,9 @@ class BaseController {
 		$this->back_info = array(
 			
 			'status'=>false,
+			
 			'error_code'=>-1,
+			
 			'error_msg'=>'data is null',
 		
 		);
@@ -59,11 +61,13 @@ class BaseController {
 	public function __call($methods,$args){
 
 		writeLog($_GET);
+		
 		$args = implode(',',$args);
 		
 		writeLog("unknow $methods,$args");
 
 		$this->back_info = $this->invaildInterface();
+		
 		echo jsonEncode($this->back_info);
 
 		return false;
@@ -428,37 +432,7 @@ class BaseController {
 	}	
 	
 
-	public function invaildCustom(){
 
-		$back_info = array(
-			
-			'status'=>false,
-			'error_code'=>-1000011,
-			'error_msg'=>'invaildCustom',
-		
-		);
-
-		return $back_info;		
-	}
-
-	/**
-	 * [existLeader description]
-	 * @return [type] [description]
-	 * @descripe 该部门已有负责人
-	 */
-	
-	public function existLeader(){
-
-		$back_info = array(
-			
-			'status'=>false,
-			'error_code'=>-510,
-			'error_msg'=>'invaildInterface',
-		
-		);
-
-		return $back_info;	
-	}
 
 	/**
 	 * [checkToken description]
@@ -503,81 +477,6 @@ class BaseController {
 		return md5($pwd);
 
 	}
-
-
-	/**
-	 * [queryCompanyId description]
-	 * @param  [type] $custom_id [description]
-	 * @return [type]            [description]
-	 * @descripe 根据用户的id 查询对应的公司
-	 */
-	
-	public function queryCompanyId($custom_id = NULL){
-		
-		//查询公司信息
-		$sql = "select company_id from custom_company where custom_id = %d ";
-		$sql = sprintf($sql,$custom_id);
-		$company_id = $this->conn->find($sql);
-		$company_id = isset($company_id['company_id']) ? $company_id['company_id'] : 1;
-		
-		return $company_id;
-	}
-
-
-	/**
-	 * [queryDeptId description]
-	 * @param  [type] $custom_id [description]
-	 * @return [type]            [description]
-	 * @descripe 查询客户所在的部门，可能一个人属于多部门
-	 */
-	
-	public function queryDeptId($custom_id = NULL){
-
-		$sql = "select dept_id from custom_dept where custom_id = %d ";
-		$sql = sprintf($sql,$custom_id);
-		$dept_id = $this->conn->select($sql);
-		$dept_id = isset($dept_id) ? $dept_id : array();
-
-		return $dept_id;
-	}
-
-
-	/**
-	 * [queryLoanTyoe description]
-	 * @param  [type] $company_id [description]
-	 * @return [type]             [description]
-	 * @descripe 查询公司提供的贷款类型
-	 */
-	
-	public function queryLoanType($company_id = NULL){
-
-		//查询公司的贷款性质
-		$sql = "select  loan_type from company  where id = %d ";
-		$sql = sprintf($sql,$company_id);
-		//echo $sql;
-		$loan_type = $this->conn->find($sql);
-		$loan_type = isset($loan_type['loan_type']) ? $loan_type['loan_type'] : NULL;
-		return $loan_type;
-	}
-
-
-	/**
-	 * [getCustomId description]
-	 * @param  [type] $token [description]
-	 * @return [type]        [description]
-	 * @descripe 根据token 查询对应的用户id
-	 */
-	
-	public function getCustomId($token = NULL){
-
-		//个人信息
-		$info = $this->redis->getString($token);
-		$info = isset($info) ? jsonDecode($info) : array();
-		$custom_id = isset($info['id']) ? $info['id'] : 2; 
-		
-		return $custom_id;
-	}
-
 
 	/**
 	 * [uploadFileFailed description]

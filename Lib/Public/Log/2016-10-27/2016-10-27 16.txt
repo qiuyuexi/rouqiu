@@ -1,0 +1,1636 @@
+2016-10-27 16:43:13:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:13:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:13:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:43:30:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:30:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:30:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:43:31:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:31:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:43:31:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:31:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:43:31:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:31:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:43:57:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:57:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:43:57:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:44:09:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:44:09:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:25
+
+2016-10-27 16:44:09:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:45:04:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:04:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:04:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:45:23:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:26
+
+2016-10-27 16:45:23:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:23:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:23:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:45:46:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:26
+
+2016-10-27 16:45:46:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:46:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:46:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:45:46:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:26
+
+2016-10-27 16:45:46:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:46:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:46:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:45:46:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:26
+
+2016-10-27 16:45:46:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:46:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:46:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:45:47:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:26
+
+2016-10-27 16:45:47:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:47:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:27
+
+2016-10-27 16:45:47:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:47:52:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:30
+
+2016-10-27 16:47:52:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:32
+
+2016-10-27 16:47:52:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:32
+
+2016-10-27 16:47:52:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:48:57:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:30
+
+2016-10-27 16:48:57:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:32
+
+2016-10-27 16:48:57:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:32
+
+2016-10-27 16:48:57:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:48:57:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:30
+
+2016-10-27 16:48:57:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:32
+
+2016-10-27 16:48:57:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:32
+
+2016-10-27 16:48:57:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:48:58:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:30
+
+2016-10-27 16:48:58:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:32
+
+2016-10-27 16:48:58:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:32
+
+2016-10-27 16:48:58:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:06:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:06:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:06:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:06:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:07:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:07:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:07:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:07:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:07:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:07:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:07:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:07:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:07:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:07:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:07:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:07:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:08:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:08:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:45:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:45:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:45:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:45:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:45:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:45:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:45:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:45:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:45:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:45:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:45:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:45:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:46:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:46:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:46:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:46:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:51:46:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:51:46:message:
+错误类型:8
+错误提示:Undefined variable: system_driver
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:46:message:
+错误类型:2
+错误提示:in_array() expects parameter 2 to be array, null given
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:41
+
+2016-10-27 16:51:46:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'db\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 22,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:53:58:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:53:58:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:53:58:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:53:58:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:53:58:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:53:58:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:53:59:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:53:59:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:53:59:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:53:59:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:00:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:54:00:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:00:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:54:00:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:00:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:54:00:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:00:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:54:00:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:00:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:54:00:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:00:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:54:00:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:00:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:54:00:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:00:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:54:00:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:00:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:39
+
+2016-10-27 16:54:00:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 39,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:29:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:29:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:30:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:30:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:30:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:30:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:30:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:30:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:54:31:message:
+错误类型:8
+错误提示:Undefined variable: config
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:38
+
+2016-10-27 16:54:31:message:
+array (
+  'type' => 1,
+  'message' => 'Class name must be a valid object or a string',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 38,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:02:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:02:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:29:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:29:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:30:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:30:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:30:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:30:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:30:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:30:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:31:message:
+错误类型:2
+错误提示:require_once(/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php): failed to open stream: No such file or directory
+错误文件:/var/www/rouqiu/Lib/Common/start.php
+错误行:45
+
+2016-10-27 16:55:31:message:
+array (
+  'type' => 64,
+  'message' => 'require_once(): Failed opening required \'/var/www/rouqiu/Lib/Config/../Driver/db.driver.class.php\' (include_path=\'.:/usr/local/php5/lib/php\')',
+  'file' => '/var/www/rouqiu/Lib/Common/start.php',
+  'line' => 45,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:55:46:message:
+错误类型:2
+错误提示:mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on '127.0.0.1' (111)
+错误文件:/var/www/rouqiu/Lib/Driver/db.driver.php
+错误行:39
+
+2016-10-27 16:55:46:message:
+Can't connect to MySQL server on '127.0.0.1' (111)
+2016-10-27 16:55:46:message:
+array (
+  'type' => 1,
+  'message' => 'Class \'myRedis\' not found',
+  'file' => '/var/www/rouqiu/Lib/Controller/BaseController.class.php',
+  'line' => 24,
+  'tag' => 'shutdownFunction',
+)
+2016-10-27 16:56:15:message:
+错误类型:2
+错误提示:mysqli::mysqli(): (HY000/2003): Can't connect to MySQL server on '127.0.0.1' (111)
+错误文件:/var/www/rouqiu/Lib/Driver/db.driver.php
+错误行:39
+
+2016-10-27 16:56:15:message:
+Can't connect to MySQL server on '127.0.0.1' (111)
+2016-10-27 16:56:15:message:
+array (
+  'type' => 1,
+  'message' => 'Uncaught exception \'RedisException\' with message \'Redis server went away\' in /var/www/rouqiu/Lib/Driver/myRedis.driver.php:375
+Stack trace:
+#0 /var/www/rouqiu/Lib/Driver/myRedis.driver.php(375): Redis->select(1)
+#1 /var/www/rouqiu/Lib/Controller/BaseController.class.php(26): myRedis->selectDb(1)
+#2 /var/www/rouqiu/index.php(15): BaseController->__construct()
+#3 {main}
+  thrown',
+  'file' => '/var/www/rouqiu/Lib/Driver/myRedis.driver.php',
+  'line' => 375,
+  'tag' => 'shutdownFunction',
+)

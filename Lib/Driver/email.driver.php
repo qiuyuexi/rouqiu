@@ -7,7 +7,7 @@ class email {
 		
 	private $mail;
 
-	public function __construct($send_address = '357748841@qq.com',$title = 'PHPMailer发送邮件的示例',$body = '测试用例',$attach = array()){
+	public function __construct($send_address = 'xxx@qq.com',$title = 'PHPMailer发送邮件的示例',$body = '测试用例',$attach = array()){
 		
 		//示例化PHPMailer核心类
 
@@ -33,16 +33,16 @@ class email {
 		$this->mail->CharSet = 'UTF-8';
 
 		//设置发件人姓名（昵称） 任意内容，显示在收件人邮件的发件人邮箱地址前的发件人姓名
-		$this->mail->FromName = 'z8853797';
+		$this->mail->FromName = 'xxx';
 
 		//smtp登录的账号 
-		$this->mail->Username ='18583913896@163.com';
+		$this->mail->Username ='xxx@163.com';
 
 		//smtp登录的密码 
-		$this->mail->Password = 'qweasdzxc123';
+		$this->mail->Password = 'xxx';
 
 		//设置发件人邮箱地址 这里填入上述提到的“发件人邮箱”
-		$this->mail->From = '18583913896@163.com';
+		$this->mail->From = 'xxxx';
 
 		//邮件正文是否为html编码 注意此处是一个方法 不再是属性 true或false
 		$this->mail->isHTML(true); 

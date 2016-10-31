@@ -7,7 +7,7 @@ class email {
 		
 	private $mail;
 
-	public function __construct($send_address = 'xxxxx@qq.com'){
+	public function __construct($send_address = '357748841@qq.com'){
 		
 		//示例化PHPMailer核心类
 
@@ -36,13 +36,13 @@ class email {
 		$this->mail->FromName = 'z8853797';
 
 		//smtp登录的账号 
-		$this->mail->Username ='xxxx13896@163.com';
+		$this->mail->Username ='18583913896@163.com';
 
 		//smtp登录的密码 
-		$this->mail->Password = 'xxxxx';
+		$this->mail->Password = 'qweasdzxc123';
 
 		//设置发件人邮箱地址 这里填入上述提到的“发件人邮箱”
-		$this->mail->From = '1xxxx@163.com';
+		$this->mail->From = '18583913896@163.com';
 
 		//邮件正文是否为html编码 注意此处是一个方法 不再是属性 true或false
 		$this->mail->isHTML(true); 
@@ -59,6 +59,7 @@ class email {
 			
 			writeLog($value);
 			
+			echo $value['path'];
 			$this->mail->addAttachment($value['path'],$value['name']);
 		
 		}
@@ -136,7 +137,7 @@ class email {
 	@example
 		$email = new email();
 		$email->setBody('http://www.baidu.com');
-		$email->setAddress('xxxx1@qq.com');
+		$email->setAddress('357748841@qq.com');
 		$email->setSubject('测试');
 		$email->setAttach(
 			array(

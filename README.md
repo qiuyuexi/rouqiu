@@ -9,7 +9,7 @@ index.php?C=Controller&M=Method
 2.Config/config.php
 里面设置了 数据库基本配置，控制器，驱动目录，项目名称，驱动的类名
 
-3.Drover 
+3.Driver 
 里面有mysql，redis,mongodb,错误记录函数，正则，图片验证码，邮件驱动。
 
 4.Common 

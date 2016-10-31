@@ -39,7 +39,21 @@ class BaseController {
 
 		$post = file_get_contents("php://input");
 		
-		$this->post = jsonDecode($post);
+		$this->post = isset($post) ? jsonDecode($post) : array();
+
+		writeLog($this->post);
+		
+		if(is_array($this->post)){
+
+			//过滤下数据
+			foreach ($this->post as $key => $value) {
+
+				$this->post[$key] = $this->delData($value);
+				
+			}
+		}
+		
+
 	}
 
 
@@ -353,6 +367,63 @@ class BaseController {
 
 
 	/**
+	 * [invaildEqPwd description]
+	 * @return [type] [description]
+	 * @descripe 俩个密码不想等
+	 */
+	public function invaildEqPwd(){
+		
+		$back_info = array(
+			
+			'status'=>false,
+			'error_code'=>-1000012,
+			'error_msg'=>'invaildPwd',
+		
+		);
+
+		return $back_info;	
+	}
+
+	/**
+	 * [eqPwd description]
+	 * @return [type] [description]
+	 * @descripe 新旧密码相等
+	 */
+	
+	public function eqPwd(){
+		$back_info = array(
+			
+			'status'=>false,
+			'error_code'=>-1000013,
+			'error_msg'=>'invaildPwd',
+		
+		);
+
+		return $back_info;	
+	}
+
+
+	/**
+	 * [invaildPwdFormat description]
+	 * @return [type] [description]
+	 * @descripe 密码格式出错
+	 */
+	
+	public function invaildPwdFormat(){
+		
+		$back_info = array(
+			
+			'status'=>false,
+			'error_code'=>-1000014,
+			'error_msg'=>'invaildPwd',
+		
+		);
+
+		return $back_info;	
+	}
+
+
+	/**
 	 * [invaildToken description]
 	 * @return [type] [description]
 	 * @descripe 无效的令牌
@@ -495,5 +566,64 @@ class BaseController {
 
 		return $back_info;	
 	}
+
+
+	/**
+	 * [sendEmailFailed description]
+	 * @return [type] [description]
+	 *@descripe 发送邮件失败
+	 */
+	public function sendEmailFailed(){
+
+		$back_info = array(
+			
+			'status'=>false,
+			'error_code'=>-402,
+			'error_msg'=>'sendEmailFailed',
+		
+		);
+
+		return $back_info;			
+	}
+
+	/**
+	 * [delData description]
+	 * @param  [type] $value [description]
+	 * @return [type]        [description]
+	 * @descripe 过滤数据
+	 */
+	
+	public function delData($data){
+
+		if(is_array($data)){
+
+			foreach ($data as $key => $value) {
+			
+				$value = trim($value);
+		    
+		        $value= addslashes($value);
+		    
+		        $value = stripslashes($value);
+		    
+		        $value = htmlspecialchars($value);
+		    
+		        $data[$key] = strip_tags($value);
+			}
+		}else{
+
+			$data = trim($data);
+		    
+		    $data= addslashes($data);
+		    
+		    $data = stripslashes($data);
+		    
+		    $data = htmlspecialchars($data);
+		    
+		    $data = strip_tags($data);
+		}
+		
+			
+		return $data;	
+	} 
 
 }

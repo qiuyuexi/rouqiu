@@ -4,7 +4,7 @@
     define('DB_HOST', '127.0.0.1');
     define('DB_USR', 'root');
     define('DB_PWD','');
-    define('DB_NAME', 'jrwb');
+    define('DB_NAME', 'db');
     define('DB_PORT', 3306);
    	
    	//文件目录

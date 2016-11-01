@@ -91,8 +91,10 @@ class verify{
 		return array('verify'=>$this->verify,'img'=>PROJECT.'/'.$time.'.png');
 	}
 
-
-
+	/**
+	 * [addText description]
+	 * @descripe 生成图片验证码
+	 */
 	public function  addText(){
 
 		$verify = '';//生成的验证码

@@ -603,8 +603,6 @@ class BaseController {
 		    
 		        $value= addslashes($value);
 		    
-		        $value = stripslashes($value);
-		    
 		        $value = htmlspecialchars($value);
 		    
 		        $data[$key] = strip_tags($value);
@@ -614,8 +612,6 @@ class BaseController {
 			$data = trim($data);
 		    
 		    $data= addslashes($data);
-		    
-		    $data = stripslashes($data);
 		    
 		    $data = htmlspecialchars($data);
 		    

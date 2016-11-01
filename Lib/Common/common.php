@@ -267,7 +267,6 @@
 
                 $value = trim($value);
                 $value = addslashes($value);
-                $value = stripslashes($value);
                 $value = htmlspecialchars($value);
                 $value = strip_tags($value);
                 $str .= "{$k} = '{$value}',";
@@ -310,7 +309,6 @@
     
                     $value = trim($value);
                     $value = addslashes($value);
-                    $value = stripslashes($value);
                     $value = htmlspecialchars($value);
                     $value = strip_tags($value);
                     $keys .=  " {$key},";

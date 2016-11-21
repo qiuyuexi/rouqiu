@@ -1,139 +1,146 @@
 <?php
 
-class myMongo{
-	
-	private static $conn;
-		
-	private $host;//域名
+class myMongo
+{
 
-	private $port;//端口号
+    private static $conn;
 
-	private $user;//用户名
+    private $host;//域名
 
-	private $pwd;//密码
+    private $port;//端口号
 
-	private $mongo;//momgo服务
+    private $user;//用户名
 
-	private $db;//选择的数据库
+    private $pwd;//密码
 
-	private $collection;//选择的集合
+    private $mongo;//momgo服务
 
-	public function __construct(){
+    private $db;//选择的数据库
 
-		$this->host = 'localhost';
+    private $collection;//选择的集合
 
-		$this->port = '27018';
+    public function __construct ()
+    {
 
-		$this->db = 'cloud_log';
+        $this->host = 'localhost';
 
-		$this->user = '';
+        $this->port = '27018';
 
-		$this->pwd = '';
-		
-		//print_r(get_extension_funcs('mongodb'));
-		//print_r(get_declared_classes());
-		
-		$server = "mongodb://{$this->host}:{$this->port}";
+        $this->db = 'cloud_log';
 
-		$this->mongo = new MongoClient($server);
+        $this->user = '';
 
-		//var_dump($this->mongo);
-	}
+        $this->pwd = '';
 
+        $server = "mongodb://{$this->host}:{$this->port}";
 
-	/**
-	 * [getConn description]
-	 * @return [type] [description]
-	 *@descripe mongodb单例
-	 */
-	
-	public static function  getConn(){
-		
-		if(!isset(self::$conn)){
-			self::$conn = new myMongo();
-		}
-		//echo 11;
-		//var_dump(self::$conn->mongo);
-		return self::$conn; 
-	}
+        try {
 
-	/**
-	 * [selectDb description]
-	 * @param  [type] $db [description]
-	 * @return [type]     [description]
-	 * @descripe 选择数据库
-	 */
-	public function selectDb($db){
+            $this->mongo = new MongoClient($server);
+        } catch (Exception $e) {
 
-		self::$conn->db = self::$conn->mongo->$db;
+            $this->mongo = NULL;
+        }
 
-		//var_dump(self::$conn->mongo);
-	}
-
-	/**
-	 * [selectCollection description]
-	 * @return [type] [description]
-	 *@descripe 修改选中的集合
-	 */
-	
-	public function selectCollection($collection){
-
-		self::$conn->collection = self::$conn->db->$collection;
-
-	}
+    }
 
 
-	/**
-	 * [insert description]
-	 * @return [type] [description]
-	 * @descripe 往指定的集合中插入数据
-	 */
-	
-	public function insert($data = array()){
-		
-		$status = self::$conn->collection->insert($data);
-		
+    /**
+     * [getConn description]
+     * @return [type] [description]
+     * @descripe mongodb单例
+     */
 
-		return $status;
-	}
+    public static function getConn ()
+    {
+
+        if (!isset(self::$conn)) {
+            self::$conn = new myMongo();
+        }
+
+        return self::$conn;
+    }
+
+    /**
+     * [selectDb description]
+     * @param  [type] $db [description]
+     * @return [type]     [description]
+     * @descripe 选择数据库
+     */
+    public function selectDb ($db)
+    {
+
+        self::$conn->db = self::$conn->mongo->$db;
+
+    }
+
+    /**
+     * [selectCollection description]
+     * @return [type] [description]
+     * @descripe 修改选中的集合
+     */
+
+    public function selectCollection ($collection)
+    {
+
+        self::$conn->collection = self::$conn->db->$collection;
+
+    }
 
 
-	/**
-	 * [find description]
-	 * @return [type] [description]
-	 * @descripe 返回该集合的元素，专门用来计算
-	 */
-	
-	public function find($query = array(),$limit = 0){
+    /**
+     * [insert description]
+     * @return [type] [description]
+     * @descripe 往指定的集合中插入数据
+     */
 
-		$data = self::$conn->collection->find($query)->limit($limit);
+    public function insert ($data = array())
+    {
 
-		$arr = array();
+        $status = self::$conn->collection->insert($data);
 
-		foreach ($data as $key => $value) {
-			
-			unset($value['_id']);
-			
-			$arr[] = array(
-				'm'=>$value['m'].'',
-				't'=>$value['t'].'',
-				'v'=>$value['v'].'',
-			);
-		}
-		
-		return $arr;
-	}
+        return $status;
+    }
 
 
-	/**
-	 * [count description]
-	 * @return [type] [description]
-	 * @descripe 计算该集合的元素个数
-	 */
-	
-	public function count($query = array()){
+    /**
+     * [find description]
+     * @return [type] [description]
+     * @descripe 返回该集合的元素，专门用来计算
+     */
 
-		return self::$conn->collection->count($query);
-	
-	}
+    public function find ($query = array(), $limit = 0)
+    {
+
+        $data = self::$conn->collection->find($query)->limit($limit);
+
+        $arr = array();
+
+        foreach ($data as $key => $value) {
+
+            unset($value['_id']);
+
+            $arr[] = array(
+                'm' => $value['m'] . '',
+                't' => $value['t'] . '',
+                'v' => $value['v'] . '',
+            );
+        }
+
+        return $arr;
+    }
+
+
+    /**
+     * [count description]
+     * @return [type] [description]
+     * @descripe 计算该集合的元素个数
+     */
+
+    public function count ($query = array())
+    {
+
+        return self::$conn->collection->count($query);
+
+    }
 }

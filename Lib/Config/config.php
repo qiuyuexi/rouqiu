@@ -24,7 +24,7 @@
     	static public function sysDriver(){
     		
     		//mysql,图片验证码，正则表达式，redis,邮件
-    		return array('db','verify','preg','myRedis','email','myMongo');
+    		return array('db','verify','preg','myRedis','email','myMongo','mypdo');
     	
     	}
 

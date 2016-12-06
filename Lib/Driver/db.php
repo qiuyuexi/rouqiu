@@ -1,14 +1,18 @@
 <?php
 
+namespace Driver;
+
 /**
- *数据库操作驱动
+ * Class db
+ * @package Driver
+ * descripe 封装的mysqli
  */
 class db
 {
 
     private $db_host;//ip
 
-    private $db_usr;//数据库登录用户
+    private $db_user;//数据库登录用户
 
     private $db_pwd;//数据库登录密码
 
@@ -20,12 +24,12 @@ class db
 
     static private $conn = NULL;
 
-    public function __construct ($db_host = NULL, $db_usr = NULL, $db_pwd = NULL, $db_name = NULL, $db_port = NULL)
+    public function __construct ($db_host = NULL, $db_user = NULL, $db_pwd = NULL, $db_name = NULL, $db_port = NULL)
     {
 
         $this->db_host = isset($db_host) ? $db_host : DB_HOST;
 
-        $this->db_usr = isset($db_usr) ? $db_usr : DB_USR;
+        $this->db_user = isset($db_user) ? $db_user : DB_USER;
 
         $this->db_pwd = isset($db_pwd) ? $db_pwd : DB_PWD;
 
@@ -33,7 +37,7 @@ class db
 
         $this->db_port = isset($db_port) ? $db_port : DB_PORT;
 
-        $this->mysqli = new mysqli($this->db_host, $this->db_usr, $this->db_pwd, $this->db_name, $this->db_port);
+        $this->mysqli = new \mysqli($this->db_host, $this->db_user, $this->db_pwd, $this->db_name, $this->db_port);
 
         if (mysqli_connect_error()) {
 
@@ -52,7 +56,7 @@ class db
      * @descripe 获得数据库的链接
      */
 
-    static public function getConn ($status = 0)
+    static public function init ($status = 0)
     {
 
         if (is_null(self::$conn)) {
@@ -368,6 +372,6 @@ class db
      */
     public function log ($sql)
     {
-        sqlLog($sql);
+        writeLog($sql);
     }
 }

@@ -1,9 +1,10 @@
 <?php
 
+namespace Driver;
+
 /**
- * redis驱动，用来进行redis的基本操作
- *
- * @author qyx
+ * Class myRedis
+ * @package Driver
  */
 class myRedis
 {
@@ -27,7 +28,7 @@ class myRedis
 
         $this->timeout = isset($timeout) ? $timeout : 2.5;
 
-        $this->redis = new Redis();
+        $this->redis = new \Redis();
 
         $this->redis->connect($this->host, $this->port, $this->timeout);
     }
@@ -46,7 +47,7 @@ class myRedis
      * @param null $timeout 过期时间
      * @return myRedis
      */
-    public static function getRedis ($host = NULL, $port = NULL, $timeout = NULL)
+    public static function init ($host = NULL, $port = NULL, $timeout = NULL)
     {
 
         if (!isset(self::$conn)) {

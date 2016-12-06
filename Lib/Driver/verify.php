@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+namespace Driver;
+
 /**生成验证码图像
  * 
  */

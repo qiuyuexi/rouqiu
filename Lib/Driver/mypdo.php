@@ -1,11 +1,13 @@
 <?php
 
+namespace Driver;
+
 /**
  * Class mypdo
- * @author qyx
+ * @package Driver
  */
-
-class mypdo {
+class mypdo
+{
 
     private $db_type;//数据库 类型
 
@@ -17,27 +19,32 @@ class mypdo {
 
     private $db_pwd;//数据库密码
 
-    private  $pdo;//pdo链接
+    private $pdo;//pdo链接
 
     static private $conn;
 
-    public  function __construct (){
+    public function __construct ($db_host = NULL, $db_user = NULL, $db_pwd = NULL, $db_name = NULL, $db_port = NULL,$db_type = NULL)
+    {
 
-        $this->db_type = isset($this->db_type) ? ( empty($this->db_type) ? 'mysql' : $this->db_type )   : 'mysql' ;
+        $this->db_host =  isset($db_host)  ?  $db_host : DB_HOST;
 
-        $this->db_host = isset($this->db_host) ? ( empty($this->db_host) ? '127.0.0.1' : $this->db_host )   : '127.0.0.1' ;
+        $this->db_user  =  isset($db_user)   ?  $db_user  : DB_USER;
 
-        $this->db_name = isset($this->db_name) ? ( empty($this->db_name) ? 'study' : $this->db_name )   : 'study' ;
+        $this->db_pwd  =  isset($db_pwd)   ?  $db_pwd  : DB_PWD;
 
-        $this->db_user = isset($this->db_user) ? ( empty($this->db_user) ? 'root' : $this->db_user )   : 'root' ;
+        $this->db_name =  isset($db_name)  ?  $db_name : DB_NAME;
 
-        $this->db_pwd = isset($this->db_pwd) ? ( empty($this->db_pwd) ? ' ' : $this->db_pwd )   : '' ;
+        $this->db_port =  isset($db_port)  ?  $db_port : DB_PORT;
+
+        $this->db_type =  isset($db_type)  ?  $db_type : 'mysql';
 
         //初始化
-        try{
+        try {
 
-            $this->pdo = new PDO("{$this->db_type}:host={$this->db_host};dbname={$this->db_name}","{$this->db_user}","{$this->db_pwd}",array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 "));
-        }catch (Exception $e){
+            $this->pdo = new  \PDO("{$this->db_type}:host={$this->db_host};dbname={$this->db_name}", "{$this->db_user}", "{$this->db_pwd}", array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 "));
+
+        } catch (Exception $e) {
+
             writeLog($e->getMessage());
             $this->pdo = NULL;
         }
@@ -49,9 +56,10 @@ class mypdo {
      * @return mixed
      * 初始化
      */
-    public  function init(){
+    public function init ()
+    {
 
-        if(!isset(self::$conn) || empty(self::$conn)){
+        if (!isset(self::$conn) || empty(self::$conn)) {
             self::$conn = new  mypdo();
         }
         return self::$conn;
@@ -60,22 +68,23 @@ class mypdo {
 
     /**
      * @descripe 执行查询一条数据的操作
-     * @param string $string  执行的sql语句
+     * @param string $string 执行的sql语句
      * @param array $param 执行结果
      * @return mixed
      */
-    public  function  find($string = '',$param = array()){
+    public function find ($string = '', $param = array())
+    {
 
-        if($this->checkSqlParam($string,$param)){
+        if ($this->checkSqlParam($string, $param)) {
 
             $prepare = self::$conn->pdo->prepare($string);//预处理sql语句
 
             $prepare->execute($param);//执行结果
 
-            $result = $prepare->fetch(PDO::FETCH_ASSOC);
+            $result = $prepare->fetch(\PDO::FETCH_ASSOC);
 
             return $result;
-        }else{
+        } else {
             return array();
         }
 
@@ -85,22 +94,23 @@ class mypdo {
 
     /**
      * @descripe 执行查询一条数据的操作
-     * @param string $string  执行的sql语句
+     * @param string $string 执行的sql语句
      * @param array $param 执行结果
      * @return mixed
      */
-    public  function  select($string = '',$param = array()){
+    public function select ($string = '', $param = array())
+    {
 
-        if($this->checkSqlParam($string,$param)) {
+        if ($this->checkSqlParam($string, $param)) {
 
             $prepare = self::$conn->pdo->prepare($string);//预处理sql语句
 
             $prepare->execute($param);//执行结果
 
-            $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+            $result = $prepare->fetchAll(\PDO::FETCH_ASSOC);
 
             return $result;
-        }else{
+        } else {
             return array();
         }
 
@@ -113,9 +123,10 @@ class mypdo {
      * @param array $param 参数
      * @return int 执行结果
      */
-    public  function  add($string = '',$param = array(),$name = 'id'){
+    public function add ($string = '', $param = array(), $name = 'id')
+    {
 
-        if($this->checkSqlParam($string,$param)) {
+        if ($this->checkSqlParam($string, $param)) {
 
             $prepare = self::$conn->pdo->prepare($string);//预处理sql语句
 
@@ -124,11 +135,11 @@ class mypdo {
             if (false === $status) {
                 writeLog(self::$conn->errorInfo());
                 return 0;
-            }else{
+            } else {
                 $status = self::$conn->pdo->lastInsertId();
                 return $status;
             }
-        }else{
+        } else {
             return 0;
         }
     }
@@ -139,8 +150,10 @@ class mypdo {
      * @param array $param 参数
      * @return int 执行结果
      */
-    public  function  delete($string = '',$param = array()){
-        if($this->checkSqlParam($string,$param)) {
+    public function delete ($string = '', $param = array())
+    {
+
+        if ($this->checkSqlParam($string, $param)) {
 
             $prepare = self::$conn->pdo->prepare($string);//预处理sql语句
 
@@ -151,7 +164,7 @@ class mypdo {
             }
 
             return (false === $status) ? 0 : 1;
-        }else{
+        } else {
             return 0;
         }
     }
@@ -163,9 +176,10 @@ class mypdo {
      * @param array $param 参数
      * @return int 执行结果
      */
-    public  function  update($string = '',$param = array()){
+    public function update ($string = '', $param = array())
+    {
 
-        if($this->checkSqlParam($string,$param)) {
+        if ($this->checkSqlParam($string, $param)) {
 
             $prepare = self::$conn->pdo->prepare($string);//预处理sql语句
 
@@ -176,7 +190,7 @@ class mypdo {
             }
 
             return (false === $status) ? 0 : 1;
-        }else{
+        } else {
             return 0;
         }
     }
@@ -188,12 +202,13 @@ class mypdo {
      * @param $param 数组  array(1)
      * @return int
      */
-    public  function  checkSqlParam($string,$param){
+    public function checkSqlParam ($string, $param)
+    {
 
-        if(is_string($string) && !empty($string) && is_array($param)){
+        if (is_string($string) && !empty($string) && is_array($param)) {
 
             return 1;
-        }else{
+        } else {
             return 0;
         }
 
@@ -203,16 +218,18 @@ class mypdo {
      * @return mixed
      *返回错误信息
      */
-    public  function  errorInfo(){
-        return implode( ',' , self::$conn->pdo->errorInfo() );
+    public function errorInfo ()
+    {
+        return implode(',', self::$conn->pdo->errorInfo());
     }
 
 
     /**
      * 开启事务
      */
-    public  function  beginTransaction(){
-        if(isset(self::$conn) && !empty(self::$conn)){
+    public function beginTransaction ()
+    {
+        if (isset(self::$conn) && !empty(self::$conn)) {
             self::$conn->pdo->beginTransaction();
         }
     }
@@ -220,8 +237,9 @@ class mypdo {
     /**
      * 事务回滚
      */
-    public  function  rollBack(){
-        if(isset(self::$conn) && !empty(self::$conn)){
+    public function rollBack ()
+    {
+        if (isset(self::$conn) && !empty(self::$conn)) {
             self::$conn->pdo->rollBack();
         }
     }
@@ -229,8 +247,9 @@ class mypdo {
     /**
      *事务提交
      */
-    public  function  commit(){
-        if(isset(self::$conn) && !empty(self::$conn)){
+    public function commit ()
+    {
+        if (isset(self::$conn) && !empty(self::$conn)) {
             self::$conn->pdo->commit();
         }
     }

@@ -1,19 +1,14 @@
 <?
-/*
-	@example
-		$email = new email();
-		$email->setBody('http://www.baidu.com');
-		$email->setAddress('357748841@qq.com');
-		$email->setSubject('测试');
-		$email->setAttach(
-			array(
-				array('path'=>'/var/www/999.jpg','name'=>'img'),
-				)
-			);
-		$email->send();
- */
-//引入PHPMailer的核心文件 使用require_once包含避免出现PHPMailer类重复定义的警告 
+
+namespace Driver;
+
+//引入PHPMailer的核心文件 使用require_once包含避免出现PHPMailer类重复定义的警告
 require_once(__DIR__."/../Vendor/PHPMailer/PHPMailerAutoload.php");
+
+/**
+ * Class email
+ * @package Driver
+ */
 
 class email {
 		
@@ -23,7 +18,7 @@ class email {
 		
 		//示例化PHPMailer核心类
 
-		$this->mail = new PHPMailer($send_address);	
+		$this->mail = new \PHPMailer($send_address);
 		
 		$this->mail->isSMTP();
 

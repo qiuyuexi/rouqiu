@@ -1,5 +1,13 @@
 <?php
 
+namespace Driver;
+
+/**
+ * Class myMongo
+ * @package Driver
+ * 未修改完毕
+ */
+
 class myMongo
 {
 
@@ -36,7 +44,7 @@ class myMongo
 
         try {
 
-            $this->mongo = new MongoClient($server);
+            $this->mongo = new \MongoClient($server);
         } catch (Exception $e) {
 
             $this->mongo = NULL;
@@ -51,7 +59,7 @@ class myMongo
      * @descripe mongodb单例
      */
 
-    public static function getConn ()
+    public static function init ()
     {
 
         if (!isset(self::$conn)) {

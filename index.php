@@ -1,45 +1,25 @@
 <?php
-	
-	$c = isset($_GET['C']) ? $_GET['C'] : 'Base';
 
-	$m = isset($_GET['M']) ? $_GET['M'] : 'index';
-	
-	$controller = ucwords($c).'Controller';
-	
-	require_once('Lib/Common/start.php');
-	
-	if(file_exists(c_path.$controller.'.class.php')){
+    require_once('Lib/Common/start.php');
 
-		if(class_exists($controller)){
-	
-			$handle = new $controller();
-	
-			$method = $handle->$m();
-			
-		}else{
+    $c = isset($_GET['C']) ? $_GET['C'] : 'Base';//调用的控制器
 
-			$back_info = array(
-			
-				'status'=>false,
-	
-				'error_code'=>-1000010,
-	
-				'error_msg'=>'invaildClass',
-		
-			);
-			echo jsonEncode($back_info);
-		}
+    $m = isset($_GET['M']) ? $_GET['M'] : 'index';//控制器的方法
 
-	}else{
+    $controller = ucwords($c) . 'Controller';
 
-		$back_info = array(
-			
-			'status'=>false,
-	
-			'error_code'=>-1000010,
-	
-			'error_msg'=>'invaildClass',
-		);
-		echo jsonEncode($back_info);
-	}
-	
+    //先判断控制器是否存在
+    if (file_exists(c_path . $controller . '.class.php')) {
+
+        //自动调用加载类
+        if (class_exists($controller)) {
+
+            $handle = new $controller();
+
+            $method = $handle->$m();
+        }else {
+
+        }
+    }else{
+
+    }

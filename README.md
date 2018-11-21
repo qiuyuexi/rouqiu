@@ -1,31 +1,31 @@
-自己写的简单的小框架。封装了一些常用的方法，慢慢的完善它
+自己写的简单的小框架。
+封装了一些常用的方法，之前写的太挫,索性重写了
 
-1.
-入口文件index.php
-地址index.php?C=Controller&M=Method
-如果是继承BaseController  
-那么数据格式为json
-
-2.
-Config/config.php
-里面设置了数据库基本配置，控制器目录，项目名称
-
-3.
-Driver 
-里面有mysqli，redis,错误记录函数，正则，图片验证码，邮件驱动。
-
-4.
-Common 
-common.php 公共函数，里面包含一些常用的函数，
-start.php  引用的一些方法文件等
-
-5.
-Public 
-里面包含系统错误日记，数据库错误日记等
-
-6.Vendor
-引用的第三方类
-
-7
-使用composer 自动加载所需的驱动类
-
+##nginx 配置
+url/controller/action?param
+```php
+server{
+        listen 80;
+        server_name rouqiu.test.com;
+        root /www/rouqiu;
+        if (!-e $request_filename)
+        {
+                rewrite ^/(.+)$ /index.php last;
+        }
+        location / {
+                index index.php index.html;
+        }
+        location ~ \.php$ {
+                try_files $uri $uri/ =404;
+                fastcgi_pass   127.0.0.1:9000;
+                fastcgi_index  index.php;
+                fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                include        fastcgi_params;
+        }
+   }
+```
+##待完成
+* 数据库
+* redis
+* memcache
+....

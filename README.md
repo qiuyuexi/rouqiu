@@ -1,7 +1,7 @@
 自己写的简单的小框架。
 封装了一些常用的方法，之前写的太挫,索性重写了
 
-##nginx 配置
+## nginx 配置
 url/controller/action?param
 ```php
 server{
@@ -24,7 +24,7 @@ server{
         }
    }
 ```
-##待完成
+## 待完成
 * 数据库
 * redis
 * memcache

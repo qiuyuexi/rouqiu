@@ -10,7 +10,7 @@ class Init
     static $envDir = 'local';
     private static $root = '';
 
-    public static function Init()
+    public static function init()
     {
         self::setEnvironment();
         set_error_handler("Lib\Common\Init::errorHandle");
@@ -26,9 +26,9 @@ class Init
             $className = str_replace('/', '\\', $className);
             if (class_exists($className)) {
 
-                if (method_exists($className, 'index')) {
+                if (method_exists($className, 'run')) {
                     $controller = new $className;
-                    $controller->index();
+                    $controller->run();
                 } else {
                     throw new \Exception('方法不存在', 500);
                 }

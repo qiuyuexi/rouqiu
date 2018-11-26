@@ -10,7 +10,25 @@ class BaseController
 
     }
 
+    public function run()
+    {
+        $this->before();
+        $this->index();
+        $this->after();
+
+    }
+
     public function index()
+    {
+
+    }
+
+    public function before()
+    {
+
+    }
+
+    public function after()
     {
 
     }

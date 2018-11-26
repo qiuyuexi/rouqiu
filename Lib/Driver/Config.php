@@ -1,17 +1,16 @@
 <?php
 
-namespace Lib\Config;
+namespace Lib\Driver;
 
 use Lib\Common\Init;
 
 class Config
 {
-    static $envFile = '';
 
-    public static function getConfig($key)
+    public static function getConfig($envFile, $key = '')
     {
         $config = [];
-        $envFile = Init::getEnvPath() . '/' . static::$envFile;
+        $envFile = Init::getEnvPath() . '/' . $envFile;
 
         if (is_file($envFile)) {
             $config = include($envFile);

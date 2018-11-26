@@ -3,7 +3,6 @@
 namespace Lib\Driver;
 
 use Lib\Common\Init;
-use Lib\Config\LogConfig;
 
 class Log
 {
@@ -11,20 +10,21 @@ class Log
     private static $infoLog = 'info.log';
     private static $debug = 'debug.log';
     private static $logDir = '';
+    private static $envFile = 'log.php';
 
     public static function errorLog($info, $infoName = '')
     {
-        self::log($info, $infoName, self::$errorLog);
+        return self::log($info, $infoName, self::$errorLog);
     }
 
     public static function infoLog($info, $infoName = '')
     {
-        self::log($info, $infoName, self::$infoLog);
+        return self::log($info, $infoName, self::$infoLog);
     }
 
     public static function debugLog($info, $infoName = '')
     {
-        self::log($info, $infoName, self::$debug);
+        return self::log($info, $infoName, self::$debug);
     }
 
     private static function log($info, $infoName = '', $logType)
@@ -36,7 +36,9 @@ class Log
         ];
         $tpl = json_encode($tpl) . PHP_EOL;
         $file = self::getLogDir() . '/' . $logType;
-        file_put_contents($file, $tpl, FILE_APPEND);
+        $result = file_put_contents($file, $tpl, FILE_APPEND);
+        $result = $result ? true : $result;
+        return $result;
     }
 
     /**
@@ -45,7 +47,7 @@ class Log
      */
     private static function getLogDir()
     {
-        self::$logDir = self::$logDir ?: LogConfig::getConfig('dir');
+        self::$logDir = self::$logDir ?: Config::getConfig(self::$envFile, 'dir');
         if (empty(self::$logDir)) {
             error_log('log_config_empty');
             self::$logDir = Init::getRoot() . '/log';

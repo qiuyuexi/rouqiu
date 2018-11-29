@@ -1,12 +1,9 @@
 <?php
 
-namespace Lib\Common;
+namespace Lib\Driver;
 
-use Lib\Driver\Config;
-use Lib\Driver\Log;
-use Lib\Driver\Memcache;
 
-class BaseMemcache
+class Memcached
 {
     const envFile = 'mc.php';
     const EXPIRE_TIME = '3600';
@@ -16,7 +13,7 @@ class BaseMemcache
     private static function getConnect()
     {
         $config = self::getConfig();
-        $memcache = new Memcache();
+        $memcache = new \Lib\Driver\Cache\Memcached();
         return $memcache->getConnect($config);
     }
 
@@ -44,7 +41,7 @@ class BaseMemcache
             }
             return $result;
         } catch (\Exception $e) {
-            Log::errorLog($e->getMessage(), 'mc.set_error');
+            Log::getInstance()->exceptionLog($e, 'mc.set_error');
             return false;
         }
     }
@@ -57,7 +54,7 @@ class BaseMemcache
             $data = self::getConnect()->get($key);
             return $data;
         } catch (\Exception $e) {
-            Log::errorLog($e->getMessage(), 'mc.get_error');
+            Log::getInstance()->exceptionLog($e, 'mc.get_error');
             return false;
         }
     }
@@ -72,7 +69,7 @@ class BaseMemcache
             }
             return $result;
         } catch (\Exception $e) {
-            Log::errorLog($e->getMessage(), 'mc.del_error');
+            Log::getInstance()->exceptionLog($e, 'mc.del_error');
             return false;
         }
     }
@@ -84,7 +81,7 @@ class BaseMemcache
             'msg' => self::getConnect()->getResultMessage(),
             'data' => $data
         ];
-        Log::errorLog($errorInfo, $fileName);
+        Log::getInstance()->errorLog($errorInfo, $fileName);
     }
 
     private static function getKey($key)

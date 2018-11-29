@@ -12,7 +12,7 @@ class Show extends ApiController
     {
         $verify = new Verify();
         $verifyCode = $verify->getVerify();
-        Log::infoLog($verifyCode,'verify_code');
+        Log::getInstance()->infoLog($verifyCode, 'verify_code');
         $verify->output();
     }
 }

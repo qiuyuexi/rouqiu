@@ -3,59 +3,76 @@
 namespace Lib\Driver;
 
 use Lib\Common\Init;
+use Lib\Driver\Traits\Singleton;
 
 class Log
 {
-    private static $errorLog = 'error.log';
-    private static $infoLog = 'info.log';
-    private static $debug = 'debug.log';
-    private static $logDir = '';
-    private static $envFile = 'log.php';
+    use Singleton;
+    protected $logDir = '';
+    protected $envFile = '';
+    const ERROR = 'error.log';
+    const INFO = 'info.log';
+    const DEBUG = 'debug.log';
+    const EXCEPTION = 'exception.log';
 
-    public static function errorLog($info, $infoName = '')
+    public function __construct()
     {
-        return self::log($info, $infoName, self::$errorLog);
+        $this->logDir = Config::getConfig($this->envFile, 'dir');
+        if (empty($this->logDir)) {
+            error_log('log_config_empty');
+            $this->logDir = Init::getRoot() . '/log';
+        }
+        if (!is_dir($this->logDir)) {
+            mkdir($this->logDir, 0755, true);
+        }
     }
 
-    public static function infoLog($info, $infoName = '')
+    public function errorLog($info, $fileName = '')
     {
-        return self::log($info, $infoName, self::$infoLog);
+        $this->log($info, $fileName, self::ERROR);
     }
 
-    public static function debugLog($info, $infoName = '')
+    public function infoLog($info, $fileName = '')
     {
-        return self::log($info, $infoName, self::$debug);
+        $this->log($info, $fileName, self::INFO);
     }
 
-    private static function log($info, $infoName = '', $logType)
+    public function debugLog($info, $fileName = '')
+    {
+        $this->log($info, $fileName, self::DEBUG);
+    }
+
+    public function exceptionLog(\Exception $e, $fileName)
+    {
+        $errorInfo = [
+            'msg' => $e->getMessage(),
+            'line' => $e->getLine(),
+            'file' => $e->getFile(),
+            'trace' => $e->getTrace()
+        ];
+        $this->log($errorInfo, $fileName,self::EXCEPTION);
+    }
+
+    public function customizeLog($info, $fileName = '', $logType = 'default')
+    {
+        $this->log($info, $fileName, $logType);
+    }
+
+    private function log($info, $infoName = '', $logType)
     {
         $tpl = [
-            'date' => date('Y-m-d', time()),
+            'date' => date('Y-m-d H:i:s', time()),
             'message' => $info,
             'info_name' => $infoName
         ];
         $tpl = json_encode($tpl) . PHP_EOL;
-        $file = self::getLogDir() . '/' . $logType;
-        $result = file_put_contents($file, $tpl, FILE_APPEND);
+        if (is_dir($this->logDir)) {
+            $file = $this->logDir . '/' . $logType;
+            $result = file_put_contents($file, $tpl, FILE_APPEND);
+        } else {
+            $result = error_log($tpl);
+        }
         $result = $result ? true : $result;
         return $result;
-    }
-
-    /**
-     * 获取日志目录
-     * @return array|mixed|string
-     */
-    private static function getLogDir()
-    {
-        self::$logDir = self::$logDir ?: Config::getConfig(self::$envFile, 'dir');
-        if (empty(self::$logDir)) {
-            error_log('log_config_empty');
-            self::$logDir = Init::getRoot() . '/log';
-            return self::$logDir;
-        }
-        if (!is_dir(self::$logDir)) {
-            mkdir(self::$logDir, 0755, true);
-        }
-        return self::$logDir;
     }
 }

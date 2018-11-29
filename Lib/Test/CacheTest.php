@@ -12,23 +12,27 @@ class CacheTest extends TestCase
     {
         $key = 1;
         $value = 10;
-        $result = \Lib\Common\BaseMemcache::set($key, $value);
+        $result = \Lib\Driver\Memcached::set($key, $value);
         $this->assertTrue(true, $result);
-        $data = \Lib\Common\BaseMemcache::get($key);
+        $data = \Lib\Driver\Memcached::get($key);
         $this->assertEquals($value, $data);
-        $result = \Lib\Common\BaseMemcache::delete($key);
+        $result = \Lib\Driver\Memcached::delete($key);
         $this->assertTrue(true, $result);
+        $data = \Lib\Driver\Memcached::get($key);
+        $this->assertEquals(false, $data);;
     }
 
     public function testArrSetAndGetAndDelete()
     {
         $key = 1;
         $value = range(1, 100);
-        $result = \Lib\Common\BaseMemcache::set($key, $value);
+        $result = \Lib\Driver\Memcached::set($key, $value);
         $this->assertTrue(true, $result);
-        $data = \Lib\Common\BaseMemcache::get($key);
+        $data = \Lib\Driver\Memcached::get($key);
         $this->assertEquals($value, $data);
-        $result = \Lib\Common\BaseMemcache::delete($key);
+        $result = \Lib\Driver\Memcached::delete($key);
         $this->assertTrue(true, $result);
+        $data = \Lib\Driver\Memcached::get($key);
+        $this->assertEquals(false, $data);
     }
 }

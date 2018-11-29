@@ -2,6 +2,8 @@
 
 namespace Lib\Driver;
 
+use Lib\Driver\Traits\Singleton;
+
 /**
  * Class Curl
  * User: qyx
@@ -11,6 +13,7 @@ namespace Lib\Driver;
  */
 class Curl
 {
+    use Singleton;
     private $url;
     private $data;
     private $method;
@@ -22,12 +25,7 @@ class Curl
     const CURL_METHOD_POST = 'post';
     const CURL_METHOD_GET = 'get';
 
-    public static function getInstance($url, $data = [], $headers = [])
-    {
-        return new static($url, $data, $headers);
-    }
-
-    public function __construct($url, $data, $headers)
+    public function __construct($url, $data = [], $headers = [])
     {
         $this->url = $url;
         $this->data = $data;
@@ -40,31 +38,48 @@ class Curl
             CURLOPT_TIMEOUT => 5,//总执行时间
             CURLOPT_CONNECTTIMEOUT => 2,
             CURLOPT_VERBOSE => true,//错误时 输出全部信息,
-            CURLOPT_URL => $url,
+            CURLOPT_URL => $this->url
         ];
-        if (!empty($headers)) {
-            $this->opts[CURLOPT_HTTPHEADER] = $headers;
-        }
-        if (!empty($data)) {
-            $this->opts[CURLOPT_POSTFIELDS] = $data;
+        if (!empty($this->headers)) {
+            $this->opts[CURLOPT_HTTPHEADER] = $this->headers;
         }
     }
 
-    public function post()
+    /**
+     * @param bool $userHttpQuery
+     * @return $this
+     */
+    public function post($userHttpQuery = true)
     {
+        $data = $this->data;
+        if ($userHttpQuery) {
+            $data = http_build_query($this->data);
+        }
         $this->method = self::CURL_METHOD_POST;
         $this->opts[CURLOPT_POST] = true;
-        $this->exec();
+        $this->opts[CURLOPT_POSTFIELDS] = $data;
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function get()
     {
         $this->method = self::CURL_METHOD_GET;
-        $this->exec();
+        $this->opts[CURLOPT_POST] = false;
+        if (!empty($this->data)) {
+            $data = http_build_query($this->data);
+            $this->url = strpos($this->url, '?') ? $this->url . '&' . $data : $this->url . '?' . $data;
+        }
+        $this->opts[CURLOPT_URL] = $this->url;
         return $this;
     }
 
+    /**
+     * @param array $setOptions
+     * @return $this
+     */
     public function setOpts(array $setOptions)
     {
         foreach ($setOptions as $key => $value) {
@@ -73,7 +88,10 @@ class Curl
         return $this;
     }
 
-    private function exec()
+    /**
+     * @return $this
+     */
+    public function exec()
     {
         $ch = curl_init();
         if (!empty($this->opts[CURLOPT_VERBOSE])) {
@@ -96,9 +114,10 @@ class Curl
             $logInfo = [
                 'curl_info' => $curlInfo,
                 'data' => $this->data,
-                'header' => $this->headers
+                'header' => $this->headers,
+                'url' => $this->url
             ];
-            Log::errorLog($logInfo, 'curl_error');
+            Log::getInstance()->errorLog($logInfo, 'curl_error');
         }
         $endTime = round(microtime(true) * 1000);
 
@@ -106,13 +125,18 @@ class Curl
             $logInfo = [
                 'curl_info' => $curlInfo,
                 'data' => $this->data,
-                'header' => $this->headers
+                'header' => $this->headers,
+                'url' => $this->url
             ];
-            Log::infoLog($logInfo, 'curl_slow');
+            Log::getInstance()->infoLog($logInfo, 'curl_slow');
         }
         curl_close($ch);
+        return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function getResult()
     {
         return $this->result;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Lib\Common;
+namespace Lib\Driver;
 
-class BaseController
+class Controller
 {
 
     public function __construct()

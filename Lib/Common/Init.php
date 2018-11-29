@@ -2,6 +2,7 @@
 
 namespace Lib\Common;
 
+use Lib\Driver\Controller;
 use Lib\Driver\Log;
 
 class Init
@@ -33,13 +34,13 @@ class Init
                     throw new \Exception('方法不存在', 500);
                 }
             } else {
-                $controller = new BaseController();
+                $controller = new Controller();
                 $controller->output(404);
             }
         } catch (\Exception $ex) {
-            $controller = new BaseController();
+            $controller = new Controller();
             $controller->output(500);
-            Log::errorLog($ex->getMessage(), 'ex');
+
         }
     }
 
@@ -100,16 +101,12 @@ class Init
             'error_file' => $errfile,
             'error_line' => $errline
         ];
-        Log::errorLog($errInfo, $errno);
+        Log::getInstance()->errorLog($errInfo, $errno);
     }
 
 
     public static function exceptionHandler($exception)
     {
-        if (method_exists($exception, 'getMessage')) {
-            Log::errorLog($exception->getMessage(), 'uncaught_exception');
-        } else {
-            Log::errorLog($exception, 'uncaught_exception');
-        }
+        Log::getInstance()->exceptionLog($exception, 'uncatch_exception');
     }
 }

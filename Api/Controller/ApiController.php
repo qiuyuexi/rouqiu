@@ -2,9 +2,9 @@
 
 namespace Api\Controller;
 
-use Lib\Common\BaseController;
+use Lib\Driver\Controller;
 
-class ApiController extends BaseController
+class ApiController extends Controller
 {
 
 }

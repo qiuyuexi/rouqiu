@@ -20,8 +20,6 @@ class Verify
 
     private $verify;//生成的验证码
 
-    private $path;//图片保存的地址
-
     private $character;//汉子字符串
 
     private $fontfile;//字体文件位置
@@ -55,14 +53,13 @@ class Verify
     {
         switch ($type) {
             case 0:
-                # code...
                 $this->addStr();//生成字符串验证码
                 break;
             case 1:
                 $this->addText();//生成汉字验证码
                 break;
             default:
-                # code...
+                $this->addStr();//生成字符串验证码
                 break;
         }
 
@@ -81,19 +78,12 @@ class Verify
         $verify = '';//生成的验证码
 
         for ($i = 0; $i < 4; $i++) {
-
             $text_size = mt_rand(12, 18);//字体大小
-
             $text_color = imagecolorallocate($this->img, mt_rand(0, 120), mt_rand(0, 120), mt_rand(0, 120));//字体的颜色
-
             $text_str = mb_substr($this->character, mt_rand(0, mb_strlen($this->character, 'utf-8')), 1, 'utf-8');//随机取一个字符
-
             $verify .= $text_str;//生成的验证码
-
             $x = $i * 20 + mt_rand($this->config['x_size'] / 6, $this->config['x_size'] / 5);//字体的坐标
-
             $y = mt_rand($this->config['y_size'] / 3, $this->config['y_size'] / 1);//字体的坐标
-
             imagettftext($this->img, $text_size, 0, $x, $y, $text_color, $this->fontfile, $text_str);
         }
 
@@ -118,20 +108,12 @@ class Verify
         for ($i = 0; $i < 4; $i++) {
 
             $text_size = mt_rand(5, 10);//字体大小
-
             $text_color = imagecolorallocate($this->img, mt_rand(0, 120), mt_rand(0, 120), mt_rand(0, 120));//字体的颜色
-
             $text_str = substr($verify_str, mt_rand(0, strlen($verify_str)), 1);//随机取一个字符
-
             $verify .= $text_str;//生成的验证码
-
-
             $x = $i * 20 + mt_rand($this->config['x_size'] / 6, $this->config['x_size'] / 3);//字体的坐标
-
             $y = mt_rand($this->config['y_size'] / 6, $this->config['y_size'] / 3);//字体的坐标
-
             imagestring($this->img, $text_size, $x, $y, $text_str, $text_color);
-
         }
 
         $this->verify = $verify;

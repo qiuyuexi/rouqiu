@@ -35,7 +35,6 @@ class Mysql
         return $table;
     }
 
-
     public function select()
     {
 
@@ -51,21 +50,39 @@ class Mysql
 
     }
 
+    /**
+     * 读取
+     * @param $sql
+     * @param array $params
+     * @param bool $isMaster
+     * @return array
+     * @throws \Exception
+     */
     public function read($sql, $params = [], $isMaster = false)
     {
         try {
             $sth = self::getConnect($isMaster)->prepare($sql);
             $sth->setFetchMode(\PDO::FETCH_ASSOC);
             $sth->execute($params);
-
             $result = $sth->fetchAll();
         } catch (\PDOException $e) {
+            if (in_array($e->errorInfo[1], ['2006', '2013'])) {
+                return $this->read($sql, $params, $isMaster);
+            }
             $result = [];
             Log::getInstance()->exceptionLog($e, 'mysql.error');
         }
         return $result;
     }
 
+    /**
+     * 写入
+     * @param $sql
+     * @param array $params
+     * @param bool $isMaster
+     * @return bool|int
+     * @throws \Exception
+     */
     public function write($sql, $params = [], $isMaster = true)
     {
         try {
@@ -73,8 +90,34 @@ class Mysql
             $sth->execute($params);
             $result = $sth->rowCount();
         } catch (\PDOException $e) {
+            if (in_array($e->errorInfo[1], ['2006', '2013'])) {
+                return $this->write($sql, $params, $isMaster);
+            }
             $result = false;
             Log::getInstance()->exceptionLog($e, 'mysql.error');
+        }
+        return $result;
+    }
+
+    /**
+     * 事务
+     * @param callable $func
+     * @return bool
+     * @throws \Exception
+     */
+    public function transaction(callable $func)
+    {
+        try {
+            self::getConnect(true)->beginTransaction();
+            $result = $func();
+            self::getConnect(true)->commit();
+
+        } catch (\PDOException $e) {
+            if (in_array($e->errorInfo[1], ['2006', '2013'])) {
+                return $this->transaction($func);
+            }
+            $result = false;
+            self::getConnect(true)->rollBack();
         }
         return $result;
     }

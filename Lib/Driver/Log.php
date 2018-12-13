@@ -37,11 +37,17 @@ class Log
         $this->log($info, $fileName, self::INFO);
     }
 
+    
     public function debugLog($info, $fileName = '')
     {
         $this->log($info, $fileName, self::DEBUG);
     }
 
+    /**
+     * 异常
+     * @param \Exception $e
+     * @param $fileName
+     */
     public function exceptionLog(\Exception $e, $fileName)
     {
         $errorInfo = [
@@ -50,10 +56,16 @@ class Log
             'file' => $e->getFile(),
             'trace' => $e->getTrace()
         ];
-        $this->log($errorInfo, $fileName,self::EXCEPTION);
+        $this->log($errorInfo, $fileName, self::EXCEPTION);
     }
 
-    public function customizeLog($info, $fileName = '', $logType = 'default')
+    /**
+     * 自定义日志
+     * @param $info
+     * @param string $fileName
+     * @param string $logType
+     */
+    public function customizeLog($info, $fileName = '', $logType = 'default.log')
     {
         $this->log($info, $fileName, $logType);
     }
@@ -69,6 +81,9 @@ class Log
         if (is_dir($this->logDir)) {
             $file = $this->logDir . '/' . $logType;
             $result = file_put_contents($file, $tpl, FILE_APPEND);
+            if ($result === false) {
+                error_log($tpl);
+            }
         } else {
             $result = error_log($tpl);
         }

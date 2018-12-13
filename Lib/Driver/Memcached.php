@@ -46,7 +46,10 @@ class Memcached
         }
     }
 
-
+    /**
+     * @param $key
+     * @return bool|mixed
+     */
     public static function get($key)
     {
         try {
@@ -59,6 +62,10 @@ class Memcached
         }
     }
 
+    /**
+     * @param $key
+     * @return bool
+     */
     public static function delete($key)
     {
         try {

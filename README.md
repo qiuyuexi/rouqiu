@@ -1,7 +1,19 @@
 自己写的简单的小框架。
 封装了一些常用的方法，之前写的太挫,索性重写了
 
-## nginx 配置
+## 初始化
+范例:
+#### index.php 
+```php
+<?php
+
+include_once "Lib\Common\Init.php";
+\Lib\Common\Init::init();
+\Lib\Common\Init::dispatch('api');
+
+```
+
+#### nginx配置
 url/controller/action?param
 ```php
 server{

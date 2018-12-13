@@ -10,14 +10,22 @@ class Init
     static $mode = 'dev';
     static $envDir = 'local';
     private static $root = '';
+    private static $includeFiles = [];
 
     public static function init()
     {
         self::setEnvironment();
         set_error_handler("Lib\Common\Init::errorHandle");
         set_exception_handler("Lib\Common\Init::exceptionHandler");
+        spl_autoload_register("Lib\Common\Init::autoload");
+
     }
 
+    /**
+     * 请求转发
+     * @param $prefix
+     * @param string $pathInfo
+     */
     public static function dispatch($prefix, $pathInfo = '')
     {
         try {
@@ -94,6 +102,12 @@ class Init
         return self::$root;
     }
 
+    /**
+     * @param $errno
+     * @param $errstr
+     * @param $errfile
+     * @param $errline
+     */
     public static function errorHandle($errno, $errstr, $errfile, $errline)
     {
         $errInfo = [
@@ -104,9 +118,27 @@ class Init
         Log::getInstance()->errorLog($errInfo, $errno);
     }
 
-
+    /**
+     * 异常捕获
+     * @param $exception
+     */
     public static function exceptionHandler($exception)
     {
         Log::getInstance()->exceptionLog($exception, 'uncatch_exception');
+    }
+
+    /**
+     * 自动加载
+     * @param $className
+     */
+    public static function autoload($className)
+    {
+        $path = self::getRoot();
+        $className = str_replace('\\', '/', $className);
+        $className = $path . '/' . $className . '.php';
+        if (is_file($className) && !isset(self::$includeFiles[$className])) {
+            require($className);
+            self::$includeFiles[$className] = 1;
+        }
     }
 }

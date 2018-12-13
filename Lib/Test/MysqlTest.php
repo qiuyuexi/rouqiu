@@ -1,7 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../../Autoload.php';
+require_once __DIR__.'/head.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -69,6 +68,25 @@ SET FOREIGN_KEY_CHECKS = 1;";
         $data2 = ['t' => 1, 'test' => 2];
         $isDiff = empty(array_diff($data[0], $data2)) && empty(array_diff($data2, $data[0]));
         $this->assertTrue(true, $isDiff);
+    }
 
+    public function testTran()
+    {
+        $mysql = \Lib\Driver\Mysql::getInstance();
+        $result = $mysql->transaction(function () use ($mysql){
+            $sql = "insert into t(`t`,`test`) values (1,2),(2,3),(3,3)";
+
+            $result = $mysql->write($sql);
+            if($result === false){
+                throw new \Exception("写入失败",500);
+            }
+            $sql = "insert into t(`t`,`test`) values (1,2),(2,3),(3,3)";
+
+            $result = $mysql->write($sql);
+            if($result === false){
+                throw new \Exception("写入失败",500);
+            }
+        });
+        $this->assertTrue(true, $result);
     }
 }

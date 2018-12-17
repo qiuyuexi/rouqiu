@@ -20,6 +20,7 @@ class Mysql
     protected $table = 't';
     protected $shardCount = '1';
     private static $config = [];
+    private $curConfig = [];
 
     public function getTable($shardId = '')
     {
@@ -80,6 +81,7 @@ class Mysql
             $result = $sth->fetchAll();
         } catch (\PDOException $e) {
             if (in_array($e->errorInfo[1], ['2006', '2013'])) {
+                $this->reConnect();
                 return $this->read($sql, $params, $isMaster);
             }
             $result = [];
@@ -105,6 +107,7 @@ class Mysql
             $result = $sth->rowCount();
         } catch (\PDOException $e) {
             if (in_array($e->errorInfo[1], ['2006', '2013'])) {
+                $this->reConnect();
                 return $this->write($sql, $params, $isMaster);
             }
             $result = false;
@@ -129,6 +132,7 @@ class Mysql
 
         } catch (\PDOException $e) {
             if (in_array($e->errorInfo[1], ['2006', '2013'])) {
+                $this->reConnect();
                 return $this->transaction($func);
             }
             $result = false;
@@ -146,8 +150,16 @@ class Mysql
      */
     private function getConnect($isMaster = true)
     {
-        $config = $this->getConfig($isMaster);
-        return \Lib\Driver\Database\Mysql::getConnect($config);
+        $this->curConfig = $this->getConfig($isMaster);
+        return \Lib\Driver\Database\Mysql::getConnect($this->curConfig);
+    }
+
+    /**
+     * @throws \Exception
+     */
+    private function reConnect()
+    {
+        \Lib\Driver\Database\Mysql::reConnect($this->curConfig);
     }
 
     /**

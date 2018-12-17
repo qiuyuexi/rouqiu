@@ -60,4 +60,16 @@ class Mysql
         }
         return self::$pool[$key];
     }
+
+    /**
+     * 重新连接
+     * @param $config
+     * @throws \Exception
+     */
+    public static function reConnect($config)
+    {
+        //根据数据库配置 返回对应的
+        $key = md5(serialize($config));
+        self::$pool[$key] = self::connet($config);
+    }
 }

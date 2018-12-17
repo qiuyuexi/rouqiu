@@ -2,8 +2,7 @@
 
 namespace Lib\Driver;
 
-use Lib\Driver\Config;
-use Lib\Driver\Log;
+use Lib\Driver\Traits\MysqlBuilder;
 use Lib\Driver\Traits\Singleton;
 
 /**
@@ -16,12 +15,10 @@ use Lib\Driver\Traits\Singleton;
 class Mysql
 {
     use Singleton;
+    use MysqlBuilder;
     const ENV_FILE = 'db.php';
     protected $table = 't';
     protected $shardCount = '1';
-    private $whereSql = '';
-    private $params = [];
-    private $sql = '';
     private static $config = [];
 
     public function getTable($shardId = '')
@@ -35,19 +32,35 @@ class Mysql
         return $table;
     }
 
-    public function select()
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
+    public function fetch()
     {
-
+        $list = $this->read($this->getSql(), $this->getParams());
+        $data = array_pop($list);
+        return $data;
     }
 
-    public function update()
+    /**
+     * @return array
+     * @throws \Exception
+     */
+    public function fetchAll()
     {
-
+        $list = $this->read($this->getSql(), $this->getParams());
+        return $list;
     }
 
-    public function delete()
+    /**
+     * @return bool|int
+     * @throws \Exception
+     */
+    public function exec()
     {
-
+        $result = $this->write($this->getSql(), $this->getParams());
+        return $result;
     }
 
     /**
@@ -72,6 +85,7 @@ class Mysql
             $result = [];
             Log::getInstance()->exceptionLog($e, 'mysql.error');
         }
+        $this->resetBuilder();
         return $result;
     }
 
@@ -96,6 +110,7 @@ class Mysql
             $result = false;
             Log::getInstance()->exceptionLog($e, 'mysql.error');
         }
+        $this->resetBuilder();
         return $result;
     }
 
@@ -119,6 +134,7 @@ class Mysql
             $result = false;
             self::getConnect(true)->rollBack();
         }
+        $this->resetBuilder();
         return $result;
     }
 

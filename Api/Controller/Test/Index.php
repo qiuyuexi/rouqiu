@@ -8,6 +8,6 @@ class Index extends ApiController
 {
     public function index()
     {
-        $this->output(0, 'test');
+        $this->output(0, []);
     }
 }

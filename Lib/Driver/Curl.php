@@ -14,13 +14,13 @@ use Lib\Driver\Traits\Singleton;
 class Curl
 {
     use Singleton;
-    private $url;
-    private $data;
-    private $method;
-    private $opts;
-    private $headers;
-    private $slowLogTime;
-    private $result;
+    private $url = '';
+    private $data = [];
+    private $method = '';
+    private $opts = [];
+    private $headers = [];
+    private $slowLogTime = 1000;
+    private $result = false;
 
     const CURL_METHOD_POST = 'post';
     const CURL_METHOD_GET = 'get';

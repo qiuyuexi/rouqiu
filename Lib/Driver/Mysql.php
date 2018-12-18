@@ -131,12 +131,12 @@ class Mysql
             self::getConnect(true)->commit();
 
         } catch (\PDOException $e) {
+            $result = false;
+            self::getConnect(true)->rollBack();
             if (in_array($e->errorInfo[1], ['2006', '2013'])) {
                 $this->reConnect();
                 return $this->transaction($func);
             }
-            $result = false;
-            self::getConnect(true)->rollBack();
         }
         $this->resetBuilder();
         return $result;

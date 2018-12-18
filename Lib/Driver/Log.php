@@ -5,6 +5,14 @@ namespace Lib\Driver;
 use Lib\Common\Init;
 use Lib\Driver\Traits\Singleton;
 
+/**
+ * 日志类
+ * Class Log
+ * User: qyx
+ * Date: 2018/12/18
+ * Time: 上午11:39
+ * @package Lib\Driver
+ */
 class Log
 {
     use Singleton;

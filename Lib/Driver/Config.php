@@ -4,6 +4,14 @@ namespace Lib\Driver;
 
 use Lib\Common\Init;
 
+/**
+ * 配置读取，待优化
+ * Class Config
+ * User: qyx
+ * Date: 2018/12/18
+ * Time: 上午11:39
+ * @package Lib\Driver
+ */
 class Config
 {
     private static $config = [];

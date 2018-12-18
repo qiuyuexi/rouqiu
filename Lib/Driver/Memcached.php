@@ -2,6 +2,8 @@
 
 namespace Lib\Driver;
 
+use Lib\Driver\Traits\Singleton;
+
 /**
  * 待完善
  * Class Memcached
@@ -17,10 +19,12 @@ class Memcached
     const PREFIX = 'mc';
     static $configList = [];
 
+    use Singleton;
+
     /**
      * @return \Memcached|null
      */
-    private static function getConnect()
+    private function getConnect()
     {
         $config = self::getConfig();
         $memcache = new \Lib\Driver\Cache\Memcached();
@@ -30,7 +34,7 @@ class Memcached
     /**
      * @return mixed
      */
-    protected static function getConfig()
+    protected function getConfig()
     {
         if (!isset(self::$configList[static::envFile])) {
             self::$configList[static::envFile] = Config::getConfig(static::envFile);
@@ -43,14 +47,14 @@ class Memcached
      * @param $data
      * @return bool
      */
-    public static function set($key, $data)
+    public function set($key, $data)
     {
         try {
             $args = func_get_args();
-            $key = self::getKey($key);
-            $result = self::getConnect()->set($key, $data, static::EXPIRE_TIME);
+            $key = $this->getKey($key);
+            $result = $this->getConnect()->set($key, $data, static::EXPIRE_TIME);
             if ($result === false) {
-                self::logError($args, 'mc.set_error');
+                $this->logError($args, 'mc.set_error');
             }
             return $result;
         } catch (\MemcachedException $e) {
@@ -65,25 +69,25 @@ class Memcached
      * @param null $casToken
      * @return bool|mixed
      */
-    public static function get($key, callable $cacheCb = null, &$casToken = null)
+    public function get($key, callable $cacheCb = null, &$casToken = null)
     {
         try {
-            $key = self::getKey($key);
+            $key = $this->getKey($key);
             if (func_num_args() == 1) {
-                $data = self::getConnect()->get($key);
+                $data = $this->getConnect()->get($key);
             } else {
                 //一直失败。。memcached -vv 开启调试。
                 //http://php.net/manual/zh/memcached.get.php
-                if(defined('\Memcached::GET_EXTENDED')){
+                if (defined('\Memcached::GET_EXTENDED')) {
                     $flag = \Memcached::GET_EXTENDED;
-                    $res = self::getConnect()->get($key, $cacheCb, $flag);
+                    $res = $this->getConnect()->get($key, $cacheCb, $flag);
                     $data = false;
-                    if($res){
+                    if ($res) {
                         $casToken = $res['cas'];
                         $data = $res['value'];
                     }
-                }else{
-                    $data = self::getConnect()->get($key, $cacheCb, $casToken);
+                } else {
+                    $data = $this->getConnect()->get($key, $cacheCb, $casToken);
                 }
 
             }
@@ -98,11 +102,11 @@ class Memcached
      * @param $key
      * @return bool
      */
-    public static function delete($key)
+    public function delete($key)
     {
         try {
-            $key = self::getKey($key);
-            $result = self::getConnect()->delete($key);
+            $key = $this->getKey($key);
+            $result = $this->getConnect()->delete($key);
             if ($result === false && self::getConnect()->getResultCode() != \Memcached::RES_NOTFOUND) {
                 self::logError($key, 'mc.del_error');
             }
@@ -119,14 +123,14 @@ class Memcached
      * @param $data
      * @return bool
      */
-    public static function cas($casToken, $key, $data)
+    public function cas($casToken, $key, $data)
     {
         try {
             $args = func_get_args();
-            $key = self::getKey($key);
-            $result = self::getConnect()->cas($casToken, $key, $data, static::EXPIRE_TIME);
+            $key = $this->getKey($key);
+            $result = $this->getConnect()->cas($casToken, $key, $data, static::EXPIRE_TIME);
             if ($result === false) {
-                self::logError($args, 'mc.cas_error');
+                $this->logError($args, 'mc.cas_error');
             }
             return $result;
         } catch (\MemcachedException $e) {
@@ -140,11 +144,11 @@ class Memcached
      * @param $data
      * @return bool
      */
-    public static function add($key, $data)
+    public function add($key, $data)
     {
         try {
-            $key = self::getKey($key);
-            $result = self::getConnect()->add($key, $data, static::EXPIRE_TIME);
+            $key = $this->getKey($key);
+            $result = $this->getConnect()->add($key, $data, static::EXPIRE_TIME);
             return $result;
         } catch (\MemcachedException $e) {
             Log::getInstance()->exceptionLog($e, 'mc.add_error');
@@ -156,11 +160,11 @@ class Memcached
      * @param $data
      * @param $fileName
      */
-    private static function logError($data, $fileName)
+    private function logError($data, $fileName)
     {
         $errorInfo = [
-            'code' => self::getConnect()->getResultCode(),
-            'msg' => self::getConnect()->getResultMessage(),
+            'code' => $this->getConnect()->getResultCode(),
+            'msg' => $this->getConnect()->getResultMessage(),
             'data' => $data
         ];
         Log::getInstance()->errorLog($errorInfo, $fileName);
@@ -170,7 +174,7 @@ class Memcached
      * @param $key
      * @return string
      */
-    private static function getKey($key)
+    protected function getKey($key)
     {
         if (!empty(static::PREFIX)) {
             $key = static::PREFIX . ':' . $key;

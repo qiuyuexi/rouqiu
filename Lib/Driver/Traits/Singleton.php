@@ -6,6 +6,11 @@ trait Singleton
 {
     private static $instance;
 
+    private function __construct()
+    {
+        ;
+    }
+
     /**
      * @return static
      */

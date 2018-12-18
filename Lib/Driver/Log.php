@@ -23,7 +23,7 @@ class Log
     const DEBUG = 'debug.log';
     const EXCEPTION = 'exception.log';
 
-    public function __construct()
+    private function __construct()
     {
         $this->logDir = Config::getConfig($this->envFile, 'dir');
         if (empty($this->logDir)) {
@@ -45,7 +45,7 @@ class Log
         $this->log($info, $fileName, self::INFO);
     }
 
-    
+
     public function debugLog($info, $fileName = '')
     {
         $this->log($info, $fileName, self::DEBUG);

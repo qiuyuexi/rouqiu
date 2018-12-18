@@ -25,7 +25,7 @@ class Curl
     const CURL_METHOD_POST = 'post';
     const CURL_METHOD_GET = 'get';
 
-    public function __construct($url, $data = [], $headers = [])
+    private function __construct($url, $data = [], $headers = [])
     {
         $this->url = $url;
         $this->data = $data;

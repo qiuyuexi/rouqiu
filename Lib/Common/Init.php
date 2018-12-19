@@ -5,6 +5,13 @@ namespace Lib\Common;
 use Lib\Driver\Controller;
 use Lib\Driver\Log;
 
+/**
+ * Class Init
+ * User: qyx
+ * Date: 2018/12/10
+ * Time: 下午5:36
+ * @package Lib\Common
+ */
 class Init
 {
     static $mode = 'dev';
@@ -12,6 +19,9 @@ class Init
     private static $root = '';
     private static $includeFiles = [];
 
+    /**
+     * 初始化
+     */
     public static function init()
     {
         self::setEnvironment();
@@ -58,8 +68,9 @@ class Init
     private static function setEnvironment()
     {
         $configPath = self::getRoot() . '/env/config.php';
+        $config = [];
         if (is_file($configPath)) {
-            $config = require_once($configPath);
+            $config = include($configPath);
         }
 
         if (isset($config['mode'])) {
@@ -70,13 +81,23 @@ class Init
         }
     }
 
+    /**
+     * @return string
+     */
     private static function getPathInfo()
     {
-        $requestUri = $_SERVER['REQUEST_URI'];
-        $requestUri = parse_url($requestUri);
-        $pathInfo = $requestUri['path'];
-        $pathInfo = trim($pathInfo, '/');
-        $pathInfo = ucwords($pathInfo, '/');
+        if (PHP_SAPI == 'cli') {
+            $uri = getopt('', ['uri:']);
+            $pathInfo = isset($uri['uri']) ? $uri['uri'] : '';
+            $pathInfo = trim($pathInfo,'/');
+            $pathInfo = ucwords($pathInfo, '/');
+        } else {
+            $requestUri = $_SERVER['REQUEST_URI'];
+            $requestUri = parse_url($requestUri);
+            $pathInfo = $requestUri['path'];
+            $pathInfo = trim($pathInfo, '/');
+            $pathInfo = ucwords($pathInfo, '/');
+        }
         return $pathInfo;
     }
 

@@ -35,8 +35,7 @@ server{
         access_log /www/log/rouqiu.test.com.log;
    }
 ```
-###
-php cli模式
+### php cli模式
 php cli.php --uri=URI --post=$_POST --get=$_GET
 
 #### 待完善

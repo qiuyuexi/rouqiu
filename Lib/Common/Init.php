@@ -22,7 +22,7 @@ class Init
     }
 
     /**
-     * 请求转发
+     * 请求转发。web、cli
      * @param $prefix
      * @param string $pathInfo
      */

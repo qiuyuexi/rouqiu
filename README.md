@@ -20,12 +20,9 @@ server{
         listen 80;
         server_name rouqiu.test.com;
         root /www/rouqiu;
-        if (!-e $request_filename)
-        {
-                rewrite ^/(.+)$ /index.php last;
-        }
-        location / {
-                index index.php index.html;
+        index index.php index.html;
+        location /{
+            try_files $uri $uri/ /index.php?$query_string;
         }
         location ~ \.php$ {
                 try_files $uri $uri/ =404;
@@ -34,6 +31,8 @@ server{
                 fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
                 include        fastcgi_params;
         }
+        error_log  /www/log/rouqiu.test.com.err;
+        access_log /www/log/rouqiu.test.com.log;
    }
 ```
 ## 待完成

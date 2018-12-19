@@ -35,10 +35,10 @@ server{
         access_log /www/log/rouqiu.test.com.log;
    }
 ```
-### php cli模式
+### php cli
 php cli.php --uri=URI --post=$_POST --get=$_GET
 
-#### 待完善
+### 待完善
 * 数据库
 * redis
 * memcache

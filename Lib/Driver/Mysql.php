@@ -21,6 +21,12 @@ class Mysql
     protected $shardCount = '1';
     private static $config = [];
     private $curConfig = [];
+    private $logHandle = null;
+
+    private function __construct()
+    {
+        $this->logHandle = Log::getInstance();
+    }
 
     public function getTable($shardId = '')
     {
@@ -85,7 +91,7 @@ class Mysql
                 return $this->read($sql, $params, $isMaster);
             }
             $result = [];
-            Log::getInstance()->exceptionLog($e, 'mysql.error');
+            $this->logHandle->exceptionLog($e, 'mysql.error');
         }
         $this->resetBuilder();
         return $result;
@@ -111,7 +117,7 @@ class Mysql
                 return $this->write($sql, $params, $isMaster);
             }
             $result = false;
-            Log::getInstance()->exceptionLog($e, 'mysql.error');
+            $this->logHandle->exceptionLog($e, 'mysql.error');
         }
         $this->resetBuilder();
         return $result;

@@ -21,12 +21,14 @@ class Curl
     private $headers = [];
     private $slowLogTime = 1000;
     private $result = false;
+    private $logHandle = null;
 
     const CURL_METHOD_POST = 'post';
     const CURL_METHOD_GET = 'get';
 
     private function __construct($url, $data = [], $headers = [])
     {
+        $this->logHandle = Log::getInstance();
         $this->url = $url;
         $this->data = $data;
         $this->headers = $headers;
@@ -117,7 +119,7 @@ class Curl
                 'header' => $this->headers,
                 'url' => $this->url
             ];
-            Log::getInstance()->errorLog($logInfo, 'curl_error');
+            $this->logHandle->errorLog($logInfo, 'curl_error');
         }
         $endTime = round(microtime(true) * 1000);
 
@@ -128,7 +130,7 @@ class Curl
                 'header' => $this->headers,
                 'url' => $this->url
             ];
-            Log::getInstance()->infoLog($logInfo, 'curl_slow');
+            $this->logHandle->infoLog($logInfo, 'curl_slow');
         }
         curl_close($ch);
         return $this;

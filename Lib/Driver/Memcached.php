@@ -18,8 +18,13 @@ class Memcached
     const EXPIRE_TIME = 3600;
     const PREFIX = 'mc';
     static $configList = [];
-
+    private $logHandle = '';
     use Singleton;
+
+    private function __construct()
+    {
+        $this->logHandle = Log::getInstance();
+    }
 
     /**
      * @return \Memcached|null
@@ -58,7 +63,7 @@ class Memcached
             }
             return $result;
         } catch (\MemcachedException $e) {
-            Log::getInstance()->exceptionLog($e, 'mc.set_error');
+            $this->logHandle->exceptionLog($e, 'mc.set_error');
             return false;
         }
     }
@@ -93,7 +98,7 @@ class Memcached
             }
             return $data;
         } catch (\MemcachedException $e) {
-            Log::getInstance()->exceptionLog($e, 'mc.get_error');
+            $this->logHandle->exceptionLog($e, 'mc.get_error');
             return false;
         }
     }
@@ -112,7 +117,7 @@ class Memcached
             }
             return $result;
         } catch (\MemcachedException $e) {
-            Log::getInstance()->exceptionLog($e, 'mc.del_error');
+            $this->logHandle->exceptionLog($e, 'mc.del_error');
             return false;
         }
     }
@@ -134,7 +139,7 @@ class Memcached
             }
             return $result;
         } catch (\MemcachedException $e) {
-            Log::getInstance()->exceptionLog($e, 'mc.cas_error');
+            $this->logHandle->exceptionLog($e, 'mc.cas_error');
             return false;
         }
     }
@@ -151,7 +156,7 @@ class Memcached
             $result = $this->getConnect()->add($key, $data, static::EXPIRE_TIME);
             return $result;
         } catch (\MemcachedException $e) {
-            Log::getInstance()->exceptionLog($e, 'mc.add_error');
+            $this->logHandle->exceptionLog($e, 'mc.add_error');
             return false;
         }
     }
@@ -167,7 +172,7 @@ class Memcached
             'msg' => $this->getConnect()->getResultMessage(),
             'data' => $data
         ];
-        Log::getInstance()->errorLog($errorInfo, $fileName);
+        $this->logHandle->errorLog($errorInfo, $fileName);
     }
 
     /**

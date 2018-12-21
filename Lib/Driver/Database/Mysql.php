@@ -28,12 +28,15 @@ class Mysql
         $password = $config['password'];
         $timeOut = isset($config['timeout']) ? $config['timeout'] : 3;
         $charset = isset($config['charset']) ? $config['charset'] : 'utf8mb4';
+        //长连接需注意fpm子进程数与mysql最大连接数。避免子进程空闲导致连接数浪费。
+        $persistent = isset($config['presistent']) ? $config['presistent'] : 0;
         $mysql = null;
         $ops = [
             \PDO::ATTR_AUTOCOMMIT => true,
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
             \PDO::ATTR_TIMEOUT => $timeOut,
-            \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES '" . $charset . "'"
+            \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES '" . $charset . "'",
+            \PDO::ATTR_PERSISTENT => $persistent
         ];
         try {
             $mysql = new \PDO($dsn, $user, $password, $ops);

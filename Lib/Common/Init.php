@@ -89,7 +89,7 @@ class Init
         if (PHP_SAPI == 'cli') {
             $uri = getopt('', ['uri:']);
             $pathInfo = isset($uri['uri']) ? $uri['uri'] : '';
-            $pathInfo = trim($pathInfo,'/');
+            $pathInfo = trim($pathInfo, '/');
             $pathInfo = ucwords($pathInfo, '/');
         } else {
             $requestUri = $_SERVER['REQUEST_URI'];
@@ -121,6 +121,11 @@ class Init
             self::$root = $root;
         }
         return self::$root;
+    }
+
+    public static function setRoot($rootPath)
+    {
+        self::$root = $rootPath;
     }
 
     /**

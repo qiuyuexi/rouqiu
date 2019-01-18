@@ -1,15 +1,15 @@
 <?php
 
-namespace Lib\Driver\Database;
+namespace Rq\Driver\Database;
 
-use Lib\Driver\Log;
+use Rq\Driver\Log;
 
 /**
  * Class Database
  * User: qyx
  * Date: 2018/11/28
  * Time: 下午7:09
- * @package Lib\Driver\Database
+ * @package src\Driver\Database
  */
 class Mysql
 {

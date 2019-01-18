@@ -1,16 +1,16 @@
 <?php
 
-namespace Lib\Driver;
+namespace Rq\Driver;
 
-use Lib\Driver\Traits\MysqlBuilder;
-use Lib\Driver\Traits\Singleton;
+use Rq\Driver\Traits\MysqlBuilder;
+use Rq\Driver\Traits\Singleton;
 
 /**
  * Class Database
  * User: qyx
  * Date: 2018/11/28
  * Time: 下午7:20
- * @package Lib\Driver\Database
+ * @package src\Driver\Database
  */
 class Mysql
 {
@@ -157,7 +157,7 @@ class Mysql
     private function getConnect($isMaster = true)
     {
         $this->curConfig = $this->getConfig($isMaster);
-        return \Lib\Driver\Database\Mysql::getConnect($this->curConfig);
+        return \Rq\Driver\Database\Mysql::getConnect($this->curConfig);
     }
 
     /**
@@ -165,7 +165,7 @@ class Mysql
      */
     private function reConnect()
     {
-        \Lib\Driver\Database\Mysql::reConnect($this->curConfig);
+        \Rq\Driver\Database\Mysql::reConnect($this->curConfig);
     }
 
     /**

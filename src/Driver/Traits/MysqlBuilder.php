@@ -1,11 +1,11 @@
 <?php
 
-namespace Lib\Driver\Traits;
+namespace Rq\Driver\Traits;
 
 /**
  * 搓比版 后续完善
  * Trait MysqlBuilder
- * @package Lib\Driver\Traits
+ * @package src\Driver\Traits
  */
 trait MysqlBuilder
 {

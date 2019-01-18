@@ -1,15 +1,15 @@
 <?php
 
-namespace Lib\Driver;
+namespace Rq\Driver;
 
-use Lib\Driver\Traits\Singleton;
+use Rq\Driver\Traits\Singleton;
 
 /**
  * Class Curl
  * User: qyx
  * Date: 2018/11/23
  * Time: 下午5:10
- * @package Lib\Driver
+ * @package src\Driver
  */
 class Curl
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Lib\Driver;
+namespace Rq\Driver;
 
-use Lib\Common\Init;
-use Lib\Driver\Traits\Singleton;
+use Rq\Common\Init;
+use Rq\Driver\Traits\Singleton;
 
 /**
  * 日志类
@@ -11,7 +11,7 @@ use Lib\Driver\Traits\Singleton;
  * User: qyx
  * Date: 2018/12/18
  * Time: 上午11:39
- * @package Lib\Driver
+ * @package src\Driver
  */
 class Log
 {

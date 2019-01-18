@@ -1,8 +1,8 @@
 <?php
 
-namespace Lib\Driver;
+namespace Rq\Driver;
 
-use Lib\Driver\Traits\Singleton;
+use Rq\Driver\Traits\Singleton;
 
 /**
  * 待完善
@@ -10,7 +10,7 @@ use Lib\Driver\Traits\Singleton;
  * User: qyx
  * Date: 2018/12/18
  * Time: 下午2:27
- * @package Lib\Driver
+ * @package src\Driver
  */
 class Memcached
 {
@@ -32,7 +32,7 @@ class Memcached
     private function getConnect()
     {
         $config = self::getConfig();
-        $memcache = new \Lib\Driver\Cache\Memcached();
+        $memcache = new \Rq\Driver\Cache\Memcached();
         return $memcache->getConnect($config);
     }
 

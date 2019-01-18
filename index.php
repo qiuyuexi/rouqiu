@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__."/Lib/Common/Init.php";
-\Lib\Common\Init::init();
-\Lib\Common\Init::dispatch('api');
+require_once "vendor/autoload.php";
+\Rq\Common\Init::init();
+\Rq\Common\Init::dispatch('api');
 

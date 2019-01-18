@@ -35,11 +35,11 @@ CREATE TABLE `t` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;";
-        $result = \Lib\Driver\Mysql::getInstance()->write($createTableSql);
+        $result = \Rq\Driver\Mysql::getInstance()->write($createTableSql);
         $this->assertTrue(true, $result);
 
         //是否执行成功
-        $data = \Lib\Driver\Mysql::getInstance()->select(\Lib\Driver\Mysql::getInstance()->getTable())->fetchAll();
+        $data = \Rq\Driver\Mysql::getInstance()->select(\Rq\Driver\Mysql::getInstance()->getTable())->fetchAll();
         $this->assertEquals(0, count($data));
     }
 
@@ -49,10 +49,10 @@ SET FOREIGN_KEY_CHECKS = 1;";
      */
     public function testInsert()
     {
-        $mysql = \Lib\Driver\Mysql::getInstance();
+        $mysql = \Rq\Driver\Mysql::getInstance();
         $result = $mysql->insert($mysql->getTable(), ['t' => 1, 'test' => 2])->exec();
         $this->assertEquals(1, $result);
-        $data = \Lib\Driver\Mysql::getInstance()->select(\Lib\Driver\Mysql::getInstance()->getTable())->fetchAll();
+        $data = \Rq\Driver\Mysql::getInstance()->select(\Rq\Driver\Mysql::getInstance()->getTable())->fetchAll();
         $this->assertEquals(1, count($data));
     }
 
@@ -62,7 +62,7 @@ SET FOREIGN_KEY_CHECKS = 1;";
      */
     public function testInsertBatch()
     {
-        $mysql = \Lib\Driver\Mysql::getInstance();
+        $mysql = \Rq\Driver\Mysql::getInstance();
         $data = [
             [
                 't' => 11,
@@ -84,7 +84,7 @@ SET FOREIGN_KEY_CHECKS = 1;";
      */
     public function testSelect()
     {
-        $mysql = \Lib\Driver\Mysql::getInstance();
+        $mysql = \Rq\Driver\Mysql::getInstance();
 
         //普通查询
         $data = $mysql->select($mysql->getTable(), ['t', 'test'])->setWhere("t=?")->setParams([1])->fetch();
@@ -114,7 +114,7 @@ SET FOREIGN_KEY_CHECKS = 1;";
      */
     public function testDelete()
     {
-        $mysql = \Lib\Driver\Mysql::getInstance();
+        $mysql = \Rq\Driver\Mysql::getInstance();
         $data = $mysql->select($mysql->getTable(), ['id'])->fetchAll();
         $result = $mysql->delete($mysql->getTable())->exec();
         $this->assertEquals(count($data), $result);
@@ -122,7 +122,7 @@ SET FOREIGN_KEY_CHECKS = 1;";
 
     public function testTran()
     {
-        $mysql = \Lib\Driver\Mysql::getInstance();
+        $mysql = \Rq\Driver\Mysql::getInstance();
         $result = $mysql->transaction(function () use ($mysql) {
             $data = [
                 [

@@ -1,13 +1,21 @@
 {
-  "name": "qiuyuexi/rouqiu-kafka",
-  "description": "xx",
-  "authors": [
-    {
-      "name": "qyx",
-      "email": "357748841@qq.com"
+    "name": "qyx/rouqiu",
+    "description": "个人开发小框架",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "qyx",
+            "email": "357748841@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rq\\": "src/"
+        }
     }
-  ],
-  "autoload" : {
-    "psr-4" : {"rouqiu\\" : "Lib/"}
-  }
 }

@@ -1,16 +1,16 @@
 <?php
 
-namespace Lib\Common;
+namespace Rq\Common;
 
-use Lib\Driver\Controller;
-use Lib\Driver\Log;
+use Rq\Driver\Controller;
+use Rq\Driver\Log;
 
 /**
  * Class Init
  * User: qyx
  * Date: 2018/12/10
  * Time: 下午5:36
- * @package Lib\Common
+ * @package src\Common
  */
 class Init
 {
@@ -22,13 +22,13 @@ class Init
     /**
      * 初始化
      */
-    public static function init()
+    public static function init($rootPath = '')
     {
+        self::setRoot($rootPath);
+        set_error_handler("Rq\Common\Init::errorHandle");
+        set_exception_handler("Rq\Common\Init::exceptionHandler");
+        spl_autoload_register("Rq\Common\Init::autoload");
         self::setEnvironment();
-        set_error_handler("Lib\Common\Init::errorHandle");
-        set_exception_handler("Lib\Common\Init::exceptionHandler");
-        spl_autoload_register("Lib\Common\Init::autoload");
-
     }
 
     /**

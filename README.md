@@ -4,12 +4,7 @@
 ### php cgi
 范例:
 #### index.php 
-```php
-<?php
-
-include_once "Lib\Common\Init.php";
-\Lib\Common\Init::init();
-\Lib\Common\Init::dispatch('api');
+```phpgit
 
 ```
 

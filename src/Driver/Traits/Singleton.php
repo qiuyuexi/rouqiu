@@ -1,6 +1,6 @@
 <?php
 
-namespace Lib\Driver\Traits;
+namespace Rq\Driver\Traits;
 
 trait Singleton
 {

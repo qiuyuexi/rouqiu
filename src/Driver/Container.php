@@ -1,8 +1,8 @@
 <?php
 
-namespace Lib\Driver;
+namespace Rq\Driver;
 
-use Lib\Driver\Traits\Singleton;
+use Rq\Driver\Traits\Singleton;
 
 /**
  * 简易版
@@ -10,7 +10,7 @@ use Lib\Driver\Traits\Singleton;
  * User: qyx
  * Date: 2018/12/20
  * Time: 上午10:54
- * @package Lib\Driver
+ * @package src\Driver
  */
 class Container
 {

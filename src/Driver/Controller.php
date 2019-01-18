@@ -1,6 +1,6 @@
 <?php
 
-namespace Lib\Driver;
+namespace Rq\Driver;
 
 class Controller
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Lib\Driver\Cache;
+namespace Rq\Driver\Cache;
 
-use Lib\Driver\Log;
+use Rq\Driver\Log;
 
 /**
  * Class Memcached
  * User: qyx
  * Date: 2018/11/29
  * Time: 下午2:13
- * @package Lib\Driver\Cache
+ * @package src\Driver\Cache
  */
 class Memcached
 {

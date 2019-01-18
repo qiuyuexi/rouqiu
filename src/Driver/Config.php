@@ -1,8 +1,8 @@
 <?php
 
-namespace Lib\Driver;
+namespace Rq\Driver;
 
-use Lib\Common\Init;
+use Rq\Common\Init;
 
 /**
  * 配置读取，待优化
@@ -10,7 +10,7 @@ use Lib\Common\Init;
  * User: qyx
  * Date: 2018/12/18
  * Time: 上午11:39
- * @package Lib\Driver
+ * @package src\Driver
  */
 class Config
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Lib\Common;
+namespace Rq\Common;
 
-use Lib\Driver\Traits\Singleton;
+use Rq\Driver\Traits\Singleton;
 
 /**
  * 保存请求过程中的变量
@@ -10,7 +10,7 @@ use Lib\Driver\Traits\Singleton;
  * User: qyx
  * Date: 2018/12/19
  * Time: 下午5:24
- * @package Lib\Common
+ * @package src\Common
  */
 class Request
 {

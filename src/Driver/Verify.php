@@ -1,6 +1,6 @@
 <?php
 
-namespace Lib\Driver;
+namespace Rq\Driver;
 
 
 /**
@@ -9,7 +9,7 @@ namespace Lib\Driver;
  * User: qyx
  * Date: 2018/12/13
  * Time: 下午1:42
- * @package Lib\Driver
+ * @package src\Driver
  */
 class Verify
 {

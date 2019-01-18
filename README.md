@@ -2,10 +2,18 @@
 封装了一些常用的方法，之前写的太挫,索性重写了
 
 ### php cgi
+
 范例:
 #### index.php 
-```phpgit
+```php
+<?php
+require_once "vendor/autoload.php";
 
+$rootPath = __DIR__; //根据实际环境
+\Rq\Common\Init::init($rootPath);
+\Rq\Common\Init::dispatch('api');
+
+    
 ```
 
 #### nginx配置
@@ -39,3 +47,52 @@ php cli.php --uri=URI --post=$_POST --get=$_GET
 * memcache
 * 单元测试
 * ....
+
+### 文件配置实例
+###### mysql 
+``` php 
+    <?php
+    
+    return [
+        'master' => [
+            'dbname' => 'test',
+            'host' => '127.0.0.1',
+            'port' => 3306,
+            'user' => 'root',
+            'password' => '',
+            'time_out' => 3,
+            'charset' => 'utf8mb4'
+        ],
+        'slave_list' => [
+            [
+                'dbname' => 'test',
+                'host' => '127.0.0.1',
+                'port' => 3306,
+                'user' => 'root',
+                'password' => '',
+                'time_out' => 3,
+                'charset' => 'utf8mb4'
+            ]
+        ]
+    ];
+```
+
+##### mc
+``` php
+    <?php
+    
+    return [
+        ['127.0.0.1', 11211, 100],
+        ['127.0.0.1', 11211, 100],
+        ['127.0.0.1', 11211, 100]
+    ];
+```
+##### log
+``` php
+    <?php
+    
+    return [
+        'dir' => '/www/rouqiu/log'
+    ];
+
+```

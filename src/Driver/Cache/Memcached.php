@@ -3,6 +3,7 @@
 namespace Rq\Driver\Cache;
 
 use Rq\Driver\Log;
+use Rq\Driver\Traits\Singleton;
 
 /**
  * Class Memcached
@@ -15,11 +16,13 @@ class Memcached
 {
     private static $connPoll;
 
+    use Singleton;
+
     /**
      * @param $config
      * @return \Memcached|null
      */
-    public function getConnect($config)
+    public function getConnect(array $config)
     {
         $key = md5(serialize($config));
         if (!isset(self::$connPoll[$key])) {
@@ -32,7 +35,7 @@ class Memcached
      * @param $config
      * @return \Memcached|null
      */
-    private function connect($config)
+    private function connect(array $config)
     {
         try {
             $memcached = new \Memcached();
@@ -44,7 +47,7 @@ class Memcached
             ];
             $memcached->setOptions($options);
             $memcached->addServers($config);
-        } catch (\MemcachedException $e) {
+        } catch (\Exception $e) {
             $memcached = null;
             Log::getInstance()->exceptionLog($e, 'mc_connect_error');
         }

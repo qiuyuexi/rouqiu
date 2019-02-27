@@ -42,12 +42,13 @@ server{
 php cli.php --uri=URI --post=$_POST --get=$_GET
 
 ### 待完善
-* 数据库
-* redis
-* memcache
-* 单元测试
-* ....
-
+- [x] 数据库
+- [x] redis
+- [x] memcache
+- [x] 单元测试
+- [ ] ORM
+- [ ] 路由优化
+- [ ] apcu
 ### 文件配置实例
 ###### mysql 
 ``` php 

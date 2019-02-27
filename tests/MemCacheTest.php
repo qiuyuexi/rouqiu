@@ -7,6 +7,44 @@ use PHPUnit\Framework\TestCase;
 class MemCacheTest extends TestCase
 {
 
+    public function testMulti()
+    {
+        $data = [
+            '12' => 11,
+            '123' => 1234
+        ];
+        \Rq\Driver\Memcached::getInstance()->setMulti($data);
+        $value = \Rq\Driver\Memcached::getInstance()->get(12);
+        $this->assertEquals(11, $value);
+        $value = \Rq\Driver\Memcached::getInstance()->get(123);
+        $this->assertEquals(1234, $value);
+
+
+        $data = [12, 123];
+        $cattoken = [];
+        $result = \Rq\Driver\Memcached::getInstance()->getMulti($data, $cattoken);
+        $this->assertEquals(11,$result['mc:12']);
+        $this->assertEquals(1234,$result['mc:123']);
+
+        $result = \Rq\Driver\Memcached::getInstance()->deleteMulti($data);
+        $value = \Rq\Driver\Memcached::getInstance()->get(12);
+        $this->assertEquals(false, $value);
+        $value = \Rq\Driver\Memcached::getInstance()->get(123);
+        $this->assertEquals(false, $value);
+
+
+    }
+
+    public function testIncrease()
+    {
+        $result = \Rq\Driver\Memcached::getInstance()->delete(1);
+        $result = \Rq\Driver\Memcached::getInstance()->increment(1, 5);
+        $value = \Rq\Driver\Memcached::getInstance()->get(1);
+        $this->assertEquals(5, $value);
+        $value = \Rq\Driver\Memcached::getInstance()->decrement(1, 4);
+        $this->assertEquals(1, $value);
+    }
+
     public function testSetAndGetAndDelete()
     {
         $key = 1;
@@ -61,4 +99,5 @@ class MemCacheTest extends TestCase
         $result = \Rq\Driver\Memcached::getInstance()->get($key);
         $this->assertEquals($v2, $result);
     }
+
 }

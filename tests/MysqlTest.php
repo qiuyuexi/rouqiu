@@ -29,7 +29,7 @@ DROP TABLE IF EXISTS `t`;
 CREATE TABLE `t` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `t` int(4) NOT NULL,
-  `test` varchar(255) NOT NULL DEFAULT '',
+  `tests` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 

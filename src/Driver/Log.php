@@ -17,7 +17,7 @@ class Log
 {
     use Singleton;
     protected $logDir = '';
-    protected $envFile = '';
+    protected $envFile = 'log.php';
     const ERROR = 'error.log';
     const INFO = 'info.log';
     const DEBUG = 'debug.log';

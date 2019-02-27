@@ -162,9 +162,9 @@ class Init
         $path = self::getRoot();
         $className = str_replace('\\', '/', $className);
         $className = $path . '/' . $className . '.php';
-        if (is_file($className) && !isset(self::$includeFiles[$className])) {
+        if (is_file($className) && !in_array($className, self::$includeFiles)) {
             require($className);
-            self::$includeFiles[$className] = 1;
+            self::$includeFiles[] = $className;
         }
     }
 }

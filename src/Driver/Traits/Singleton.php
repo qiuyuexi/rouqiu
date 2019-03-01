@@ -6,7 +6,7 @@ trait Singleton
 {
     private static $instance;
 
-    private function __construct()
+    public function __construct()
     {
         ;
     }

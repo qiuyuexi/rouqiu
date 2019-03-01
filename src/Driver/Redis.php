@@ -24,9 +24,16 @@ class Redis
     private $logHandle = '';
     use Singleton;
 
-    private function __construct()
+    private function __construct(\Rq\Driver\Log\Log $logDriver = null)
     {
-        $this->logHandle = Log::getInstance();
+        if(is_null($logDriver)){
+            $logDriver = Log::class;
+        }
+        if (method_exists($logDriver, 'getInstance')) {
+            $this->logHandle = $logDriver::getInstance();
+        } else {
+            $this->logHandle = new $logDriver();
+        }
     }
 
     /**

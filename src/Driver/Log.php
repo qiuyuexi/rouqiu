@@ -13,23 +13,24 @@ use Rq\Driver\Traits\Singleton;
  * Time: 上午11:39
  * @package src\Driver
  */
-class Log
+class Log extends \Rq\Driver\Log\Log
 {
     use Singleton;
-    protected $logDir = '';
-    protected $envFile = 'log.php';
-    const ERROR = 'error.log';
-    const INFO = 'info.log';
-    const DEBUG = 'debug.log';
-    const EXCEPTION = 'exception.log';
+    private $configDriver = '';
 
-    private function __construct()
+    public function __construct(\Rq\Driver\Config\Config $configDriver = null)
     {
-        $this->logDir = Config::getConfig($this->envFile, 'dir');
+        if (is_null($configDriver)) {
+            $configDriver = Config::class;
+        }
+        $this->configDriver = $configDriver;
+        $this->logDir = call_user_func_array([$this->configDriver, 'getConfig'], [$this->envFile, 'dir']);
+
         if (empty($this->logDir)) {
             error_log('log_config_empty');
             $this->logDir = Init::getRoot() . '/log';
         }
+
         if (!is_dir($this->logDir)) {
             mkdir($this->logDir, 0755, true);
         }

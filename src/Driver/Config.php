@@ -12,7 +12,7 @@ use Rq\Common\Init;
  * Time: 上午11:39
  * @package src\Driver
  */
-class Config
+class Config extends \Rq\Driver\Config\Config
 {
     private static $config = [];
 

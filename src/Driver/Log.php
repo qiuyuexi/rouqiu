@@ -21,9 +21,10 @@ class Log extends \Rq\Driver\Log\Log
     public function __construct(\Rq\Driver\Config\Config $configDriver = null)
     {
         if (is_null($configDriver)) {
-            $configDriver = Config::class;
+            $this->configDriver = new Config();
+        } else {
+            $this->configDriver = $configDriver;
         }
-        $this->configDriver = $configDriver;
         $this->logDir = call_user_func_array([$this->configDriver, 'getConfig'], [$this->envFile, 'dir']);
 
         if (empty($this->logDir)) {

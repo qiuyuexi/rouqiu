@@ -2,11 +2,20 @@
 
 namespace Rq\Driver\Traits;
 
+/**
+ * 单例模式
+ * Trait Singleton
+ * @package Rq\Driver\Traits
+ */
 trait Singleton
 {
     private static $instance;
 
-    public function __construct()
+    /**
+     * 单例模式 构造函数为private
+     * Singleton constructor.
+     */
+    private function __construct()
     {
         ;
     }

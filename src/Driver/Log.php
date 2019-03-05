@@ -18,7 +18,7 @@ class Log extends \Rq\Driver\Log\Log
     use Singleton;
     private $configDriver = '';
 
-    public function __construct(\Rq\Driver\Config\Config $configDriver = null)
+    private function __construct(\Rq\Driver\Config\Config $configDriver = null)
     {
         if (is_null($configDriver)) {
             $this->configDriver = new Config();

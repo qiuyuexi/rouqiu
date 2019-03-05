@@ -11,7 +11,7 @@ abstract class Log
     const DEBUG = 'debug.log';
     const EXCEPTION = 'exception.log';
 
-    public function __construct()
+    private function __construct()
     {
     }
 

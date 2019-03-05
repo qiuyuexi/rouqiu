@@ -25,12 +25,8 @@ class Memcached
 
     private function __construct(\Rq\Driver\Log\Log $logDriver = null)
     {
-        if (is_null($logDriver)) {
-            $this->logHandle = Log::getInstance();
-        }else{
-            $this->logHandle = new $logDriver();
-        }
 
+        $this->logHandle = $logDriver ? $logDriver : Log::getInstance();
     }
 
     /**

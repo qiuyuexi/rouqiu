@@ -2,6 +2,7 @@
 
 namespace Rq\Common;
 
+use Rq\Driver\Container;
 use Rq\Driver\Controller;
 use Rq\Driver\Log;
 
@@ -18,12 +19,14 @@ class Init
     static $envDir = 'local';
     private static $root = '';
     private static $includeFiles = [];
+    static $execTime = 0;
 
     /**
-     * 初始化
+     * @param string $rootPath
      */
     public static function init($rootPath = '')
     {
+        self::containRegister();
         self::setRoot($rootPath);
         set_error_handler("Rq\Common\Init::errorHandle");
         set_exception_handler("Rq\Common\Init::exceptionHandler");
@@ -38,6 +41,7 @@ class Init
      */
     public static function dispatch($prefix, $pathInfo = '')
     {
+        $startExecTime = microtime(true);
         try {
             $pathInfo = $pathInfo ? $pathInfo : self::getPathInfo();
             $className = $prefix . '/Controller/' . $pathInfo;
@@ -58,8 +62,8 @@ class Init
         } catch (\Exception $ex) {
             $controller = new Controller();
             $controller->output(500);
-
         }
+        self::$execTime = microtime(true) - $startExecTime;
     }
 
     /**
@@ -166,5 +170,12 @@ class Init
             require($className);
             self::$includeFiles[] = $className;
         }
+    }
+
+    public static function containRegister()
+    {
+        Container::getInstance('init')->bind('log', function () {
+            return Log::getInstance();
+        });
     }
 }

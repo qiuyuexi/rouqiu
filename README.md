@@ -47,7 +47,7 @@ php cli.php --uri=URI --post=$_POST --get=$_GET
 - [x] memcache
 - [x] 单元测试
 - [ ] ORM
-- [ ] 路由优化
+- [ ] 路由优化 引入自定义路由，参考larvel慢慢实现
 - [ ] apcu
 ### 文件配置实例
 ###### mysql 
@@ -97,3 +97,6 @@ php cli.php --uri=URI --post=$_POST --get=$_GET
     ];
 
 ```
+
+##### 大致设计
+* 日志、配置读取需灵活，通过注入来实现，默认使用Driver\\Log

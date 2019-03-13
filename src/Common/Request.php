@@ -19,6 +19,7 @@ class Request
     private $post = [];
     private $get = [];
     private $request = [];
+    private $pathUrl = '';
     const DATA_TYPE_INT = 1;
     const DATA_TYPE_STRING = 2;
     const DATA_TYPE_FLOAT = 3;
@@ -28,19 +29,22 @@ class Request
 
     private function __construct()
     {
-        if (PHP_SAPI == 'cli') {
-            $cliArgs = getopt('', ['post:', 'get:']);
-            if (isset($cliArgs['post'])) {
-                parse_str($cliArgs['post'], $_POST);
+        if (empty($this->request)) {
+            if (PHP_SAPI == 'cli') {
+                $cliArgs = getopt('', ['post:', 'get:']);
+                if (isset($cliArgs['post'])) {
+                    parse_str($cliArgs['post'], $_POST);
+                }
+                if (isset($cliArgs['get'])) {
+                    parse_str($cliArgs['get'], $_GET);
+                }
+                $_REQUEST = array_merge($_GET, $_POST);
             }
-            if (isset($cliArgs['get'])) {
-                parse_str($cliArgs['get'], $_GET);
-            }
-            $_REQUEST = array_merge($_GET, $_POST);
+            $this->post = $_POST;
+            $this->get = $_GET;
+            $this->request = $_REQUEST;
+            $this->pathUrl = $this->getPathInfo();
         }
-        $this->post = $_POST;
-        $this->get = $_GET;
-        $this->request = $_REQUEST;
     }
 
     /**
@@ -105,5 +109,25 @@ class Request
                 break;
         }
         return $data;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPathInfo()
+    {
+        if (PHP_SAPI == 'cli') {
+            $uri = getopt('', ['uri:']);
+            $pathInfo = isset($uri['uri']) ? $uri['uri'] : '';
+            $pathInfo = trim($pathInfo, '/');
+            $pathInfo = ucwords($pathInfo, '/');
+        } else {
+            $requestUri = $_SERVER['REQUEST_URI'];
+            $requestUri = parse_url($requestUri);
+            $pathInfo = $requestUri['path'];
+            $pathInfo = trim($pathInfo, '/');
+            $pathInfo = ucwords($pathInfo, '/');
+        }
+        return $pathInfo;
     }
 }

@@ -50,7 +50,7 @@ class Init
             if (class_exists($className)) {
 
                 if (method_exists($className, 'run')) {
-                    $controller = new $className;
+                    $controller = new $className();
                     $controller->run();
                 } else {
                     throw new \Exception('方法不存在', 500);

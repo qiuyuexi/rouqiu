@@ -192,12 +192,25 @@ class Init
         }
         $reflection = new \ReflectionClass($className);
         if (is_null($reflection->getConstructor())) {
-            return new $className;
+            return new $className();
         }
         $params = $reflection->getConstructor()->getParameters();
         $paramsClass = [];
         foreach ($params AS $param) {
             $class = $param->getClass()->name;
+            if ($param->isDefaultValueAvailable()) {
+                $paramsClass[] = $param->getDefaultValue();
+                continue;
+            }
+            //非闭包 非类
+            if (is_null($class)) {
+                throw new \Exception($className . '参数异常:' . $param->getName(), 500);
+            }
+            //闭包
+            if ($class == 'Closure') {
+                throw new \Exception($className . '参数异常:' . $param->getName(), 500);
+            }
+            //普通类
             if (class_exists($class)) {
                 $paramsClass[] = self::getClass($class);
             } else {

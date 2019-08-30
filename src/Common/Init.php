@@ -35,9 +35,9 @@ class Init
     }
 
     /**
-     * 请求转发。web、cli
      * @param $prefix
      * @param string $pathInfo
+     * @return int|mixed
      */
     public static function dispatch($prefix, $pathInfo = '')
     {
@@ -48,9 +48,8 @@ class Init
             $className = ucwords($className, '/');
             $className = str_replace('/', '\\', $className);
             if (class_exists($className)) {
-
                 if (method_exists($className, 'run')) {
-                    $controller = new $className();
+                    $controller = self::getClass($className);
                     $controller->run();
                 } else {
                     throw new \Exception('方法不存在', 500);
@@ -64,6 +63,7 @@ class Init
             $controller->output(500);
         }
         self::$execTime = microtime(true) - $startExecTime;
+        return self::$execTime;
     }
 
     /**
@@ -177,5 +177,32 @@ class Init
         Container::getInstance('init')->bind('log', function () {
             return Log::getInstance();
         });
+    }
+
+    /**
+     * @param $className
+     * @return mixed
+     * @throws \ReflectionException
+     */
+    public static function getClass($className)
+    {
+        if (!class_exists($className)) {
+            throw new \Exception($className . '不存在', 500);
+        }
+        $reflection = new \ReflectionClass($className);
+        if (is_null($reflection->getConstructor())) {
+            return new $className;
+        }
+        $params = $reflection->getConstructor()->getParameters();
+        $paramsClass = [];
+        foreach ($params AS $param) {
+            $class = $param->getClass()->name;
+            if (class_exists($class)) {
+                $paramsClass[] = self::getClass($class);
+            } else {
+                throw new \Exception($class . '不存在', 500);
+            }
+        }
+        return new $className(...$paramsClass);
     }
 }

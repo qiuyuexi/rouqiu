@@ -11,10 +11,14 @@ require_once "vendor/autoload.php";
 
 $rootPath = __DIR__; //根据实际环境
 \Rq\Common\Init::init($rootPath);
-\Rq\Common\Init::dispatch('api');
+$prefix = 'api';//前缀。后续控制器等 都会在改目录路径下寻找文件
+\Rq\Common\Init::dispatch($prefix);
 
-    
 ```
+#### controller.php
+host/a/b
+会自动解析为controller/a/b.php.同时，会通过反射，判断构造函数是否有注入其他类，如果有的话，会自动传入。注意避免互相依赖
+
 
 #### nginx配置
 url/controller/action?param
@@ -47,7 +51,7 @@ php cli.php --uri=URI --post=$_POST --get=$_GET
 - [x] memcache
 - [x] 单元测试
 - [ ] ORM
-- [ ] 路由优化 引入自定义路由，参考larvel慢慢实现
+- [ ] 路由优化 引入自定义路由，参考laravel慢慢实现
 - [ ] apcu
 ### 文件配置实例
 ###### mysql 

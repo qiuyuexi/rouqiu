@@ -37,11 +37,11 @@ abstract class Log
     abstract public function debugLog($info, $fileName);
 
     /**
-     * @param \Exception $e
+     * @param \Throwable $e
      * @param $fileName
      * @return mixed
      */
-    abstract public function exceptionLog(\Exception $e, $fileName);
+    abstract public function exceptionLog(\Throwable $e, $fileName);
 
     /**
      * @param $info

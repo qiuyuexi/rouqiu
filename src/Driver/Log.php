@@ -55,10 +55,10 @@ class Log extends \Rq\Driver\Log\Log
 
     /**
      * 异常
-     * @param \Exception $e
+     * @param \Throwable $e
      * @param $fileName
      */
-    public function exceptionLog(\Exception $e, $fileName)
+    public function exceptionLog(\Throwable $e, $fileName)
     {
         $errorInfo = [
             'msg' => $e->getMessage(),

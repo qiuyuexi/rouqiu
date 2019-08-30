@@ -58,7 +58,8 @@ class Init
                 $controller = new Controller();
                 $controller->output(404);
             }
-        } catch (\Exception $ex) {
+        } catch (\Throwable $ex) {
+            Log::getInstance()->exceptionLog($ex, 'system_error');
             $controller = new Controller();
             $controller->output(500);
         }
